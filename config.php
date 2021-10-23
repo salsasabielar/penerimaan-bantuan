@@ -2,7 +2,7 @@
     $server = "localhost";
     $user = "root";
     $pass = "";
-    $dbname = "login";
+    $dbname = "bantuan";
 
     $connect = mysqli_connect($server, $user, $pass, $dbname);
     if ($connect) {
