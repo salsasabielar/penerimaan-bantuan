@@ -154,8 +154,9 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>
+                  <a href="logout.php">Logout</a>
+                  <!-- Logout -->
                 </a>
               </div>
             </li>
@@ -361,7 +362,7 @@
           <!--Row-->
           
           <!-- Modal Logout -->
-          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+          <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -382,7 +383,7 @@
             </div>
           </div>
 
-        </div>
+        </div> -->
         <!---Container Fluid-->
       </div>
       <!-- Footer -->
