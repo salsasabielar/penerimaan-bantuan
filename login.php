@@ -17,7 +17,7 @@ if($cek > 0) {
 	$_SESSION['nama'] = $data['nama'];
 	$_SESSION['status'] = "login";
 	$_SESSION['id_login'] = $data['id'];
-	header("location:index.html");
+	header("location:index.php");
 } else {
 	echo "<script>alert('Username/password salah!');history.go(-1);</script>";
 }
