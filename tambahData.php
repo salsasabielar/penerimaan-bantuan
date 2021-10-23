@@ -56,7 +56,6 @@
           <span>Manajemen User</span>
         </a>
       </li>
-     
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -67,7 +66,7 @@
             <i class="fa fa-bars"></i>
           </button>
           <ul class="navbar-nav ml-auto">
-            
+              
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
@@ -89,10 +88,10 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Laporan</h1>
+            <h1 class="h3 mb-0 text-gray-800">Tambah Data</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item">Laporan</li>
+              <li class="breadcrumb-item">Tambah Data</li>
             </ol>
           </div>
 
@@ -116,7 +115,7 @@
                     </thead>
                     <tfoot>
                       <tr>
-
+                       
                       </tr>
                     </tfoot>
                     <tbody>
@@ -152,7 +151,8 @@
                         <td>2012/03/29</td>
                         <td>$433,060</td>
                       </tr>
-                      </tbody>
+                      
+                    </tbody>
                   </table>
                 </div>
               </div>
@@ -160,7 +160,8 @@
           </div>
           <!--Row-->
 
-          
+         
+
         </div>
         <!---Container Fluid-->
       </div>
