@@ -99,80 +99,36 @@
           <div class="row">
             <!-- Datatables -->
             <div class="col-lg-12">
-              <div class="card mb-4">
-               
-                <div class="table-responsive p-3">
-                  <table class="table align-items-center table-flush" id="dataTable">
+              <!-- Simple Tables -->
+              <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary"><a href="#" class="btn btn-sm btn-primary">Tambah User</a></h6>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
-                        <th>No. </th>
+                        <th>No.</th>
                         <th>Username</th>
                         <th>Password</th>
                         <th>Role</th>
                         <th>Action</th>
-                        
                       </tr>
                     </thead>
-                    <tfoot>
-                      <tr>
-                        
-                      </tr>
-                    </tfoot>
                     <tbody>
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        
+                        <td><a href="#">RA0449</a></td>
+                        <td>Udin Wayang</td>
+                        <td>Nasi Padang</td>
+                        <td><span class="badge badge-success">Delivered</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a>    <a href="#" class="btn btn-sm btn-primary">Hapus</a></td>
                       </tr>
-                      <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                      </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                      </tr>
-                      <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                      </tr>
-                      <tr>
-                        <td>Airi Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>33</td>
-                        <td>2008/11/28</td>
-                      </tr>
-                      <tr>
-                        <td>Brielle Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>
-                        <td>61</td>
-                        <td>2012/12/02</td>
-                      </tr>
-                      <tr>
-                        <td>Herrod Chandler</td>
-                        <td>Sales Assistant</td>
-                        <td>San Francisco</td>
-                        <td>59</td>
-                        <td>2012/08/06</td>
-                      </tr>
+                      
                       
                     </tbody>
                   </table>
                 </div>
+                <div class="card-footer"></div>
               </div>
             </div>
             
