@@ -107,24 +107,45 @@
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
+                    <?php 
+	if(isset($_GET['pesan'])){
+		$pesan = $_GET['pesan'];
+		if($pesan == "input"){
+			echo "Data berhasil di input.";
+		}else if($pesan == "update"){
+			echo "Data berhasil di update.";
+		}else if($pesan == "hapus"){
+			echo "Data berhasil di hapus.";
+		}
+	}
+	?>
                       <tr>
                         <th>No.</th>
                         <th>Username</th>
                         <th>Password</th>
                         <th>Role</th>
                         <th>Action</th>
+
+                        <?php 
+		include "crudManageUser/config.php";
+		$query_mysqli = mysqli_query($koneksi,"SELECT * FROM user")or die(mysqli_error());
+		$nomor = 1;
+		while($data = mysqli_fetch_array($query_mysqli)){
+		?>
+		<tr>
+			<td><?php echo $nomor++; ?></td>
+			<td><?php echo $data['username']; ?></td>
+			<td><?php echo $data['password']; ?></td>
+			<td><?php echo $data['role']; ?></td>
+			<td>
+				<a class="btn btn-sm btn-primary" href="edit.php?id_user=<?php echo $data['id_user']; ?>">Edit</a>
+				<a class="btn btn-sm btn-primary" href="crudManageUser/delete.php?id_user=<?php echo $data['id_user']; ?>">Hapus</a>					
+			</td>
+		</tr>
+		<?php } ?>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td><a href="#">RA0449</a></td>
-                        <td>Udin Wayang</td>
-                        <td>Nasi Padang</td>
-                        <td><span class="badge badge-success">Delivered</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a>    <a href="#" class="btn btn-sm btn-primary">Hapus</a></td>
-                      </tr>
-                      
-                      
                     </tbody>
                   </table>
                 </div>
