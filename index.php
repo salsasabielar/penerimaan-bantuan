@@ -37,11 +37,10 @@
         </a>        
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tambahData.php">
+        <a class="nav-link collapsed" href="tambahData/tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Tambah Data</span>
-        </a>
-        
+        </a>        
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">

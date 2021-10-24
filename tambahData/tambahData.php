@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="img/logo/logo-SIB.png" rel="icon">
+  <link href="../img/logo/logo-SIB.png" rel="icon">
   <title>Sistem Informasi Penerimaan Bantuan</title>
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="css/ruang-admin.min.css" rel="stylesheet">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../css/ruang-admin.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -20,7 +20,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="img/logo/SSIB.png">
+          <img src="../img/logo/SSIB.png">
         </div>
         
       </a>
@@ -31,7 +31,7 @@
        
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="../index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>        
@@ -44,14 +44,14 @@
         
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="laporan.php">
+        <a class="nav-link collapsed" href="../laporan.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan</span>
         </a>
         
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="manageUser.php">
+        <a class="nav-link" href="../manageUser.php">
           <i class="fas fa-fw fa-palette"></i>
           <span>Manajemen User</span>
         </a>
@@ -71,7 +71,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
+                <img class="img-profile rounded-circle" src="../img/boy.png" style="max-width: 60px">
                 <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -90,7 +90,7 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Tambah Data</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
+              <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
               <li class="breadcrumb-item">Tambah Data</li>
             </ol>
           </div>
@@ -102,16 +102,18 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Simple Tables</h6>
+                  <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahData.php" class="btn btn-sm btn-primary">Tambah Data</a></h6>
                 </div>
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Item</th>
-                        <th>Status</th>
+                        <th>No.</th>
+                        <th>NIK</th>
+                        <th>Nama</th>
+                        <th>Tempat, Tanggal Lahir</th>
+                        <th>Pekerjaan</th>
+                        <th>Jenis Kelamin</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -121,6 +123,8 @@
                         <td>Udin Wayang</td>
                         <td>Nasi Padang</td>
                         <td><span class="badge badge-success">Delivered</span></td>
+                        <td></td>
+                        <td></td>
                         <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
                       </tr>
                       <tr>
@@ -128,6 +132,8 @@
                         <td>Jaenab Bajigur</td>
                         <td>Gundam 90' Edition</td>
                         <td><span class="badge badge-warning">Shipping</span></td>
+                        <td></td>
+                        <td></td>
                         <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
                       </tr>
                       
@@ -146,16 +152,6 @@
         <!---Container Fluid-->
       </div>
 
-       <!-- Footer -->
-       <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script>
-            </span>
-          </div>
-        </div>
-      </footer>
-      <!-- Footer -->
     </div>
   </div>
 
@@ -164,13 +160,13 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/ruang-admin.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../js/ruang-admin.min.js"></script>
   <!-- Page level plugins -->
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->
   <script>
