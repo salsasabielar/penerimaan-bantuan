@@ -85,63 +85,68 @@
           </ul>
         </nav>
         <!-- Topbar -->
+
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Manajemen User</h1>
+            <h1 class="h3 mb-0 text-gray-800">Tambah User</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
               <li class="breadcrumb-item">Manajemen User</li>
+              <li class="breadcrumb-item active" aria-current="page">Tambah User</li>
             </ol>
           </div>
 
-          <!-- Row -->
           <div class="row">
-            <!-- Datatables -->
-            <div class="col-lg-12">
-              <!-- Simple Tables -->
+          <div class="col-lg-12">
               <div class="card">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahUSer.php" class="btn btn-sm btn-primary">Tambah User</a></h6>
+                
+                <div class="card mb-4">
+                
+                <div class="card-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Username</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="">                      
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                    </div>
+                    <div class="form-group">
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Role</label>
+                      <input type="role" class="form-control" id="exampleInputPassword1" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-file">
+                        
+                      </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                  </form>
                 </div>
-                <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>No.</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Role</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><a href="#">RA0449</a></td>
-                        <td>Udin Wayang</td>
-                        <td>Nasi Padang</td>
-                        <td><span class="badge badge-success">Delivered</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Edit</a>    <a href="#" class="btn btn-sm btn-primary">Hapus</a></td>
-                      </tr>
-                      
-                      
-                    </tbody>
-                  </table>
-                </div>
+              </div>
+                
                 <div class="card-footer"></div>
               </div>
             </div>
+
+          
+
             
+            <div class="col-lg-6">
+                            
+            </div>
           </div>
           <!--Row-->
-
-         
 
         </div>
         <!---Container Fluid-->
       </div>
-
-       
+      
     </div>
   </div>
 
@@ -154,17 +159,6 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/ruang-admin.min.js"></script>
-  <!-- Page level plugins -->
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script>
-    $(document).ready(function () {
-      $('#dataTable').DataTable(); // ID From dataTable 
-      $('#dataTableHover').DataTable(); // ID From dataTable with Hover
-    });
-  </script>
 
 </body>
 

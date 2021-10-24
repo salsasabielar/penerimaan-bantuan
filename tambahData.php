@@ -99,62 +99,42 @@
           <div class="row">
             <!-- Datatables -->
             <div class="col-lg-12">
-              <div class="card mb-4">
-                
-                <div class="table-responsive p-3">
-                  <table class="table align-items-center table-flush" id="dataTable">
+              <!-- Simple Tables -->
+              <div class="card">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Simple Tables</h6>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Salary</th>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Item</th>
+                        <th>Status</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
-                    <tfoot>
-                      <tr>
-                       
-                      </tr>
-                    </tfoot>
                     <tbody>
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
+                        <td><a href="#">RA0449</a></td>
+                        <td>Udin Wayang</td>
+                        <td>Nasi Padang</td>
+                        <td><span class="badge badge-success">Delivered</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
                       </tr>
                       <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
-                      </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$86,000</td>
-                      </tr>
-                      <tr>
-                        <td>Cedric Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>
-                        <td>22</td>
-                        <td>2012/03/29</td>
-                        <td>$433,060</td>
+                        <td><a href="#">RA5324</a></td>
+                        <td>Jaenab Bajigur</td>
+                        <td>Gundam 90' Edition</td>
+                        <td><span class="badge badge-warning">Shipping</span></td>
+                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
                       </tr>
                       
                     </tbody>
                   </table>
                 </div>
+                <div class="card-footer"></div>
               </div>
             </div>
           </div>
