@@ -104,20 +104,27 @@
                 <div class="card mb-4">
                 
                 <div class="card-body">
-                  <form>
+                <?php 
+	include "crudManageUser/config.php";
+	$id_user = $_GET['id_user'];
+	$query_mysqli = mysqli_query($koneksi,"SELECT * FROM user WHERE id_user='$id_user'")or die(mysqli_error($koneksi));
+	$nomor = 1;
+	while($data = mysqli_fetch_array($query_mysqli)){
+	?>
+                <form action="crudManageUser/update.php" method="post">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Username</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="">                      
+                      <input type="hidden" name="id_user" value="<?php echo $data['id_user'] ?>">
+                      <input type="text" class="form-control" name="username" value="<?php echo $data['username'] ?>">                      
                     </div>
                     <div class="form-group">
                       <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                      <input type="text" class="form-control" name="password" value="<?php echo $data['password'] ?>">
                     </div>
                     <div class="form-group">
                     <div class="form-group">
                       <label for="exampleInputPassword1">Role</label>
-                      <input type="role" class="form-control" id="exampleInputPassword1" placeholder="">
+                      <input type="text" class="form-control" name="role" value="<?php echo $data['role'] ?>">
                     </div>
                     <div class="form-group">
                       <div class="custom-file">
@@ -127,6 +134,7 @@
                     
                     <button type="submit" class="btn btn-primary">Update & Simpan</button>
                   </form>
+                  <?php } ?>
                 </div>
               </div>
                 

@@ -8,5 +8,5 @@ $role = $_POST['role'];
  
 mysqli_query($koneksi,"UPDATE user SET username='$username', password='$password', role='$role' WHERE id_user='$id_user'");
  
-header("location:index.php?pesan=update");
+header("location:../manageUser.php");
 ?>

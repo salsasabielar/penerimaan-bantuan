@@ -104,20 +104,19 @@
                 <div class="card mb-4">
                 
                 <div class="card-body">
-                  <form>
+                <form action="crudManageUser/addAksi.php" method="post">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Username</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="">                      
+                      <label for="username">Username</label>
+                      <input type="text" class="form-control" name="username">                      
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                      <label for="password">Password</label>
+                      <input type="text" class="form-control" name="password">
                     </div>
                     <div class="form-group">
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Role</label>
-                      <input type="role" class="form-control" id="exampleInputPassword1" placeholder="">
+                      <label for="role">Role</label>
+                      <input type="text" class="form-control" name="role">
                     </div>
                     <div class="form-group">
                       <div class="custom-file">

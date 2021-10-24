@@ -138,7 +138,7 @@
 			<td><?php echo $data['password']; ?></td>
 			<td><?php echo $data['role']; ?></td>
 			<td>
-				<a class="btn btn-sm btn-primary" href="edit.php?id_user=<?php echo $data['id_user']; ?>">Edit</a>
+				<a class="btn btn-sm btn-primary" href="form_editUser.php?id_user=<?php echo $data['id_user']; ?>">Edit</a>
 				<a class="btn btn-sm btn-primary" href="crudManageUser/delete.php?id_user=<?php echo $data['id_user']; ?>">Hapus</a>					
 			</td>
 		</tr>

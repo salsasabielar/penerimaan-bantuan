@@ -6,5 +6,5 @@ $role = $_POST['role'];
  
 mysqli_query($koneksi,"INSERT INTO user VALUES('','$username','$password','$role')");
  
-header("location:index.php?pesan=input");
+header("location:../manageUser.php");
 ?>
