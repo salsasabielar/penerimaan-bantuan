@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon">
           <img src="img/logo/SSIB.png">
         </div>
@@ -37,11 +37,10 @@
         </a>        
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tambahData.php">
+        <a class="nav-link collapsed" href="tambahData/tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Tambah Data</span>
-        </a>
-        
+        </a>        
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">
