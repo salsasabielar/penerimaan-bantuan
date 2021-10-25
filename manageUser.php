@@ -12,6 +12,7 @@
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
+  <link href="css/button.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -102,22 +103,33 @@
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahUSer.php" class="btn btn-sm btn-primary">Tambah User</a></h6>
+                  <form action="manageUser.php" method="get">
+                      <input type="text" name="cari">
+                      <input type="submit" value="Cari">
+                  </form>
+                  <?php 
+                        if(isset($_GET['cari'])){
+                            $cari = $_GET['cari'];
+                            echo "<b>Hasil pencarian : ".$cari."</b>";
+                        }
+                    ?>
                 </div>
                 <div class="table-responsive">
+                  
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                     <?php 
-	if(isset($_GET['pesan'])){
-		$pesan = $_GET['pesan'];
-		if($pesan == "input"){
-			echo "Data berhasil di input.";
-		}else if($pesan == "update"){
-			echo "Data berhasil di update.";
-		}else if($pesan == "hapus"){
-			echo "Data berhasil di hapus.";
-		}
-	}
-	?>
+                      if(isset($_GET['pesan'])){
+                        $pesan = $_GET['pesan'];
+                        if($pesan == "input"){
+                          echo "Data berhasil di input.";
+                        }else if($pesan == "update"){
+                          echo "Data berhasil di update.";
+                        }else if($pesan == "hapus"){
+                          echo "Data berhasil di hapus.";
+                        }
+                      }
+                    ?>
                       <tr>
                         <th>No.</th>
                         <th>Username</th>
@@ -126,22 +138,39 @@
                         <th>Action</th>
 
                         <?php 
-		include "crudManageUser/config.php";
-		$query_mysqli = mysqli_query($koneksi,"SELECT * FROM user")or die(mysqli_error());
-		$nomor = 1;
-		while($data = mysqli_fetch_array($query_mysqli)){
-		?>
-		<tr>
-			<td><?php echo $nomor++; ?></td>
-			<td><?php echo $data['username']; ?></td>
-			<td><?php echo $data['password']; ?></td>
-			<td><?php echo $data['role']; ?></td>
-			<td>
-				<a class="btn btn-sm btn-primary" href="form_editUser.php?id_user=<?php echo $data['id_user']; ?>">Edit</a>
-				<a class="btn btn-sm btn-primary" href="crudManageUser/delete.php?id_user=<?php echo $data['id_user']; ?>">Hapus</a>					
-			</td>
-		</tr>
-		<?php } ?>
+                          include "crudManageUser/config.php";
+                          $query_mysqli = mysqli_query($koneksi,"SELECT * FROM user")or die(mysqli_error());
+                          
+                          if(isset($_GET['cari'])){
+                              $cari = $_GET['cari'];
+                              $query = mysqli_query($koneksi,"SELECT * FROM user WHERE username LIKE '%".$cari."%'"); 
+                            }
+                              else{
+                                  $query = mysqli_query($koneksi,"SELECT * FROM user"); 
+                              }
+                          $nomor = 1;
+                          if($query){
+                          while($data = mysqli_fetch_array($query)){
+                          
+
+                            
+                            
+                          // $no = 1;
+                          
+                          //   while($data = mysqli_fetch_array($data)){
+                          ?> 
+                            <tr>
+                              <td><?php echo $nomor++; ?></td>
+                              <td><?php echo $data['username']; ?></td>
+                              <td><?php echo $data['password']; ?></td>
+                              <td><?php echo $data['role']; ?></td>
+                              <td>
+                                <a class="btn btn-sm btn-primary" href="form_editUser.php?id_user=<?php echo $data['id_user']; ?>">Edit</a>
+                                <a class="btn btn-sm btn-primary" href="crudManageUser/delete.php?id_user=<?php echo $data['id_user']; ?>">Hapus</a>					
+                              </td>
+                            </tr>
+                            
+                          <?php } }  ?>
                       </tr>
                     </thead>
                     <tbody>
