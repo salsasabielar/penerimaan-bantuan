@@ -140,40 +140,22 @@
                           if($query){
                           while($data = mysqli_fetch_array($query)){
                           ?> 
-		<tr>
-			<td><?php echo $nomor++; ?></td>
-			<td><?php echo $data['nik']; ?></td>
-			<td><?php echo $data['nama']; ?></td>
-      <td><?php echo $data['ttl']; ?></td>
-      <td><?php echo $data['pekerjaan']; ?></td>
-			<td><?php echo $data['jenisKelamin']; ?></td>
-			<td>
-				<a class="edit" href="form_editData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Edit</a> |
-				<a class="hapus" href="deleteData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Hapus</a> |
-        <a class="hapus" href="detail.php?id_penerima=<?php echo $data['id_penerima']; ?>">Detail</a>
-			</td>
-		</tr>
-		<?php } }?>
-                    </thead>
+                            <tr>
+                              <td><?php echo $nomor++; ?></td>
+                              <td><?php echo $data['nik']; ?></td>
+                              <td><?php echo $data['nama']; ?></td>
+                              <td><?php echo $data['ttl']; ?></td>
+                              <td><?php echo $data['pekerjaan']; ?></td>
+                              <td><?php echo $data['jenisKelamin']; ?></td>
+                              <td>
+                                <a class="edit" href="form_editData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Edit</a> |
+                                <a class="hapus" href="deleteData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Hapus</a> |
+                                <a class="hapus" href="detail.php?id_penerima=<?php echo $data['id_penerima']; ?>">Detail</a>
+                              </td>
+                            </tr>
+                            <?php } }?>
+                      </thead>
                     <tbody>
-                      <!-- <tr>
-                        <td><a href="#">RA0449</a></td>
-                        <td>Udin Wayang</td>
-                        <td>Nasi Padang</td>
-                        <td><span class="badge badge-success">Delivered</span></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA5324</a></td>
-                        <td>Jaenab Bajigur</td>
-                        <td>Gundam 90' Edition</td>
-                        <td><span class="badge badge-warning">Shipping</span></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr> -->
                       
                     </tbody>
                   </table>
