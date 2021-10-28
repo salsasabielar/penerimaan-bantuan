@@ -104,37 +104,37 @@
                 <div class="card mb-4">
                 
                 <div class="card-body">
-                <form action="crudManageUser/addAksi.php" method="post">
+                <form action="prosesTambah.php" method="post">
                     <div class="form-group">
-                      <label for="username">NIK</label>
-                      <input type="text" class="form-control" name="username">                      
+                      <label for="nik">NIK</label>
+                      <input type="text" class="form-control" name="nik">                      
                     </div>
                     <div class="form-group">
-                      <label for="password">Nama</label>
-                      <input type="text" class="form-control" name="password">
+                      <label for="nama">Nama</label>
+                      <input type="text" class="form-control" name="nama">
                     </div>
                     <div class="form-group">
                     <div class="form-group">
-                      <label for="role">Tempat, Tanggal Lahir</label>
-                      <input type="text" class="form-control" name="role">
+                      <label for="ttl">Tempat, Tanggal Lahir</label>
+                      <input type="text" class="form-control" name="ttl">
                     </div>
                     <div class="form-group">
-                      <label for="role">Pekerjaan</label>
-                      <input type="text" class="form-control" name="role">
+                      <label for="pekerjaan">Pekerjaan</label>
+                      <input type="text" class="form-control" name="pekerjaan">
                     </div>
                     <div class="form-group">
-                      <label for="role">Jenis Kelamin</label>
-                      <input type="text" class="form-control" name="role">
+                      <label for="jenisKelamin">Jenis Kelamin</label>
+                      <input type="text" class="form-control" name="jenisKelamin">
                     </div>
-
+                    <h5><b>Kondisi Calon Penerima Bantuan</b></h5>
                     <div class="form-group">
                       <label>Penerima merupakan calon penerima BST Kemensos</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio1" name="k1" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio1">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio2" name="k1" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio2">Tidak</label>
                       </div>
                     </div>
@@ -142,11 +142,11 @@
                     <div class="form-group">
                       <label>Kehilangan mata pencaharian</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio3" name="k2" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio3">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio4" name="k2" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio4">Tidak</label>
                       </div>
                     </div>
@@ -154,11 +154,11 @@
                     <div class="form-group">
                       <label>Anggota keluarga yang rentan sakit menahun, COVID-19, dan isolasi mandiri</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio5" name="k3" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio5">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio6" name="k3" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio6">Tidak</label>
                       </div>
                     </div>
@@ -166,11 +166,11 @@
                     <div class="form-group">
                       <label>Sumber penghasilan kurang dari Rp 750.000,-/bulan</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio7" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio7" name="k4" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio7">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio8" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio8" name="k4" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio8">Tidak</label>
                       </div>
                     </div>
@@ -178,11 +178,11 @@
                     <div class="form-group">
                       <label>Tutup usaha</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio9" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio9" name="k5" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio9">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio10" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio10" name="k5" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio10">Tidak</label>
                       </div>
                     </div>
@@ -190,11 +190,11 @@
                     <div class="form-group">
                       <label>Pendapatan berkurang akibat pandemi COVID-19</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio11" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio11" name="k6" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio11">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio12" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio12" name="k6" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio12">Tidak</label>
                       </div>
                     </div>
@@ -202,11 +202,11 @@
                     <div class="form-group">
                       <label>Tidak mampu berobat ke pelayanan kesehatan karena tidak memiliki uang dan jaminan kesehatan</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio13" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio13" name="k7" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio13">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio14" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio14" name="k7" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio14">Tidak</label>
                       </div>
                     </div>
@@ -214,11 +214,11 @@
                     <div class="form-group">
                       <label>Tidak memiliki tabungan/barang yang mudah dijual/digadaiakan dengan nilai gadai minimal Rp 1.000.000,-</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio15" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio15" name="k8" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio15">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio16" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio16" name="k8" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio16">Tidak</label>
                       </div>
                     </div>
@@ -226,11 +226,11 @@
                     <div class="form-group">
                       <label>Di dalam 1 rumah dihuni lebih dari 1 Kepala Keluarga</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio17" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio17" name="k9" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio17">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio18" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio18" name="k9" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio18">Tidak</label>
                       </div>
                     </div>
@@ -238,11 +238,11 @@
                     <div class="form-group">
                       <label>Keluarga cerai(ibu-ibu kepala keluarga) yang tidak memiliki harta warisan</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio19" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio19" name="k10" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio19">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio20" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio20" name="k10" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio20">Tidak</label>
                       </div>
                     </div>
@@ -250,11 +250,11 @@
                     <div class="form-group">
                       <label>Tidak memiliki keluarga lain yang dapat membantu</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio21" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio21" name="k11" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio21">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio22" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio22" name="k11" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio22">Tidak</label>
                       </div>
                     </div>
@@ -262,11 +262,11 @@
                     <div class="form-group">
                       <label>Memiliki keluarga yang disabilitas</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio23" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio23" name="k12" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio23">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio24" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio24" name="k12" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio24">Tidak</label>
                       </div>
                     </div>
@@ -274,11 +274,11 @@
                     <div class="form-group">
                       <label>Rumah dengan dinding kayu/bambu murah/tembok tanpa plester</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio25" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio25" name="k13" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio25">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio26" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio26" name="k13" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio26">Tidak</label>
                       </div>
                     </div>
@@ -286,11 +286,11 @@
                     <div class="form-group">
                       <label>Makan 1-2 kali/hari</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio27" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio27" name="k14" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio27">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio28" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio28" name="k14" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio28">Tidak</label>
                       </div>
                     </div>
@@ -298,11 +298,11 @@
                     <div class="form-group">
                       <label>Konsumsi daging/susu/ayam hanya 1 kali/minggu</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio29" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio29" name="k15" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio29">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio30" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio30" name="k15" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio30">Tidak</label>
                       </div>
                     </div>
@@ -310,11 +310,11 @@
                     <div class="form-group">
                       <label>Lansia (di atas 60 tahun) terlantar</label>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio31" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio31" name="k16" class="custom-control-input" value="Ya">
                         <label class="custom-control-label" for="customRadio31">Ya </label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio32" name="customRadio" class="custom-control-input">
+                        <input type="radio" id="customRadio32" name="k16" class="custom-control-input" value="Tidak">
                         <label class="custom-control-label" for="customRadio32">Tidak</label>
                       </div>
                     </div>

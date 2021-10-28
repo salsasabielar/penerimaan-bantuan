@@ -115,9 +115,28 @@
                         <th>Jenis Kelamin</th>
                         <th>Action</th>
                       </tr>
+                      <?php 
+		include "../crudManageUser/config.php";
+		$query_mysqli = mysqli_query($koneksi,"SELECT * FROM datapenerima")or die(mysqli_error());
+		$nomor = 1;
+		while($data = mysqli_fetch_array($query_mysqli)){
+		?>
+		<tr>
+			<td><?php echo $nomor++; ?></td>
+			<td><?php echo $data['nik']; ?></td>
+			<td><?php echo $data['nama']; ?></td>
+      <td><?php echo $data['ttl']; ?></td>
+      <td><?php echo $data['pekerjaan']; ?></td>
+			<td><?php echo $data['jenisKelamin']; ?></td>
+			<td>
+				<a class="edit" href="form_editData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Edit</a> |
+				<a class="hapus" href="deleteData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Hapus</a>
+			</td>
+		</tr>
+		<?php } ?>
                     </thead>
                     <tbody>
-                      <tr>
+                      <!-- <tr>
                         <td><a href="#">RA0449</a></td>
                         <td>Udin Wayang</td>
                         <td>Nasi Padang</td>
@@ -134,7 +153,7 @@
                         <td></td>
                         <td></td>
                         <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
+                      </tr> -->
                       
                     </tbody>
                   </table>
