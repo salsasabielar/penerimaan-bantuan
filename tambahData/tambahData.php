@@ -149,7 +149,8 @@
 			<td><?php echo $data['jenisKelamin']; ?></td>
 			<td>
 				<a class="edit" href="form_editData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Edit</a> |
-				<a class="hapus" href="deleteData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Hapus</a>
+				<a class="hapus" href="deleteData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Hapus</a> |
+        <a class="hapus" href="detail.php?id_penerima=<?php echo $data['id_penerima']; ?>">Detail</a>
 			</td>
 		</tr>
 		<?php } }?>
