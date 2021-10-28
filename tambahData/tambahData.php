@@ -102,6 +102,16 @@
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahData.php" class="btn btn-sm btn-primary">Tambah Data</a></h6>
+                  <form action="../tambahData/tambahData.php" method="get">
+                      <input type="text" name="cari">
+                      <input type="submit" value="Cari">
+                  </form>
+                  <?php 
+                        if(isset($_GET['cari'])){
+                            $cari = $_GET['cari'];
+                            echo "<b>Hasil pencarian : ".$cari."</b>";
+                        }
+                    ?>
                 </div>
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush">
@@ -116,11 +126,20 @@
                         <th>Action</th>
                       </tr>
                       <?php 
-		include "../crudManageUser/config.php";
-		$query_mysqli = mysqli_query($koneksi,"SELECT * FROM datapenerima")or die(mysqli_error());
-		$nomor = 1;
-		while($data = mysqli_fetch_array($query_mysqli)){
-		?>
+                          include "../crudManageUser/config.php";
+                          $query_mysqli = mysqli_query($koneksi,"SELECT * FROM datapenerima")or die(mysqli_error());
+                          
+                          if(isset($_GET['cari'])){
+                              $cari = $_GET['cari'];
+                              $query = mysqli_query($koneksi,"SELECT * FROM datapenerima WHERE nama LIKE '%".$cari."%' OR nik LIKE '%".$cari."%'" ); 
+                            }
+                              else{
+                                  $query = mysqli_query($koneksi,"SELECT * FROM datapenerima"); 
+                              }
+                          $nomor = 1;
+                          if($query){
+                          while($data = mysqli_fetch_array($query)){
+                          ?> 
 		<tr>
 			<td><?php echo $nomor++; ?></td>
 			<td><?php echo $data['nik']; ?></td>
@@ -133,7 +152,7 @@
 				<a class="hapus" href="deleteData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Hapus</a>
 			</td>
 		</tr>
-		<?php } ?>
+		<?php } }?>
                     </thead>
                     <tbody>
                       <!-- <tr>

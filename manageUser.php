@@ -150,13 +150,6 @@
                           $nomor = 1;
                           if($query){
                           while($data = mysqli_fetch_array($query)){
-                          
-
-                            
-                            
-                          // $no = 1;
-                          
-                          //   while($data = mysqli_fetch_array($data)){
                           ?> 
                             <tr>
                               <td><?php echo $nomor++; ?></td>

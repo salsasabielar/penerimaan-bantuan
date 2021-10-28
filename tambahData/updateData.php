@@ -4,7 +4,7 @@ include '../crudManageUser/config.php';
 $id_penerima = $_POST['id_penerima'];
 $nik = $_POST['nik'];
 $nama = $_POST['nama'];
-$ttl = date("Y-m-d");
+$ttl = $_POST['ttl'];
 $pekerjaan = $_POST['pekerjaan'];
 $jenisKelamin = $_POST['jenisKelamin'];
 $k1 = $_POST['k1'];
