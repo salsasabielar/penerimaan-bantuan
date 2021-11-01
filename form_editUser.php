@@ -103,12 +103,12 @@
                 
                 <div class="card-body">
                 <?php 
-	include "crudManageUser/config.php";
-	$id_user = $_GET['id_user'];
-	$query_mysqli = mysqli_query($koneksi,"SELECT * FROM user WHERE id_user='$id_user'")or die(mysqli_error($koneksi));
-	$nomor = 1;
-	while($data = mysqli_fetch_array($query_mysqli)){
-	?>
+                include "crudManageUser/config.php";
+                $id_user = $_GET['id_user'];
+                $query_mysqli = mysqli_query($koneksi,"SELECT * FROM user WHERE id_user='$id_user'")or die(mysqli_error($koneksi));
+                $nomor = 1;
+                while($data = mysqli_fetch_array($query_mysqli)){
+                ?>
                 <form action="crudManageUser/update.php" method="post">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Username</label>
@@ -122,7 +122,10 @@
                     <div class="form-group">
                     <div class="form-group">
                       <label for="exampleInputPassword1">Role</label>
-                      <input type="text" class="form-control" name="role" value="<?php echo $data['role'] ?>">
+                      <select class="form-control" name="role">
+                      <option <?php if( $id_user=='admin'){echo "selected"; } ?> value='admin'>Admin</option>
+                      <option <?php if( $id_user=='user'){echo "selected"; } ?> value='user'>User</option>
+                      </select>
                     </div>
                     <div class="form-group">
                       <div class="custom-file">
