@@ -114,7 +114,19 @@
                     <div class="form-group">
                     <div class="form-group">
                       <label for="role">Role</label>
-                      <input type="text" class="form-control" name="role">
+                      <form method='POST' action=''>
+                      <select name="role">
+                      <option value="admin">Admin</option>
+                      <option value="user">User</option>
+                      </select>
+                      </form>
+                      <?php
+                      if (isset($_POST['submit'])) {
+                      $role = $_POST['role'];
+                      $sql = $db->query("INSERT INTO user (role) VALUES ('$role') ");
+                      header('location:../manageUser.php');
+                      }
+                      ?>
                     </div>
                     <div class="form-group">
                       <div class="custom-file">
