@@ -101,8 +101,8 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahData.php" class="btn btn-sm btn-primary">Tambah Data</a></h6>
-                  <form action="../tambahData/tambahData.php" method="get">
+                  <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahKriteria.php" class="btn btn-sm btn-primary">Tambah Data</a></h6>
+                  <form action="../crudKriteria/tambahKriteria.php" method="get">
                       <input type="text" name="cari">
                       <input type="submit" value="Cari">
                   </form>
@@ -118,23 +118,19 @@
                     <thead class="thead-light">
                       <tr>
                         <th>No.</th>
-                        <th>NIK</th>
                         <th>Nama</th>
-                        <th>Tempat, Tanggal Lahir</th>
-                        <th>Pekerjaan</th>
-                        <th>Jenis Kelamin</th>
                         <th>Action</th>
                       </tr>
                       <?php 
                           include "../crudManageUser/config.php";
-                          $query_mysqli = mysqli_query($koneksi,"SELECT * FROM datapenerima")or die(mysqli_error());
+                          $query_mysqli = mysqli_query($koneksi,"SELECT * FROM kriteria")or die(mysqli_error());
                           
                           if(isset($_GET['cari'])){
                               $cari = $_GET['cari'];
-                              $query = mysqli_query($koneksi,"SELECT * FROM datapenerima WHERE nama LIKE '%".$cari."%' OR nik LIKE '%".$cari."%'" ); 
+                              $query = mysqli_query($koneksi,"SELECT * FROM kriteria WHERE nama LIKE '%".$cari."%' OR nik LIKE '%".$cari."%'" ); 
                             }
                               else{
-                                  $query = mysqli_query($koneksi,"SELECT * FROM datapenerima"); 
+                                  $query = mysqli_query($koneksi,"SELECT * FROM kriteria"); 
                               }
                           $nomor = 1;
                           if($query){
@@ -142,21 +138,17 @@
                           ?> 
                             <tr>
                               <td><?php echo $nomor++; ?></td>
-                              <td><?php echo $data['nik']; ?></td>
                               <td><?php echo $data['nama']; ?></td>
-                              <td><?php echo $data['ttl']; ?></td>
-                              <td><?php echo $data['pekerjaan']; ?></td>
-                              <td><?php echo $data['jenisKelamin']; ?></td>
                               <td>
-                                <a class="btn btn-sm btn-primary" href="form_editData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Edit</a> 
-                                <a class="btn btn-sm btn-primary" href="deleteData.php?id_penerima=<?php echo $data['id_penerima']; ?>">Hapus</a> 
-                                <a class="btn btn-sm btn-primary" href="detail.php?id_penerima=<?php echo $data['id_penerima']; ?>">Detail</a>
-                                <a class="btn btn-sm btn-primary" href="">Filter</a>
+                                <a class="btn btn-sm btn-primary" href="form_editKriteria.php?id_kriteria=<?php echo $data['id_kriteria']; ?>">Edit</a> 
+                                <a class="btn btn-sm btn-primary" href="deleteKriteria.php?id_kriteria=<?php echo $data['id_kriteria']; ?>">Hapus</a> 
+                                <a class="btn btn-sm btn-primary" href="detail.php?id_kriteria=<?php echo $data['id_kriteria']; ?>">Detail</a>
+                                
                               </td>
                             </tr>
                             <?php } }?>
                       </thead>
-                    <tbody>                      
+                    <tbody>
                       
                     </tbody>
                   </table>
@@ -165,7 +157,9 @@
               </div>
             </div>
           </div>
-          <!--Row-->         
+          <!--Row-->
+
+         
 
         </div>
         <!---Container Fluid-->
