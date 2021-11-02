@@ -39,7 +39,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
-          <span>Tambah Data</span>
+          <span>Tambah Data Warga</span>
         </a>
         
       </li>
@@ -89,7 +89,7 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Tambah Data</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
+              <li class="breadcrumb-item"><a href="tambahData.php">Home</a></li>
               <li class="breadcrumb-item">Tambah Data</li>
             </ol>
           </div>
@@ -102,7 +102,7 @@
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahData.php" class="btn btn-sm btn-primary">Tambah Data</a></h6>
-                  <form action="../tambahData/tambahData.php" method="get">
+                  <form action="../tambahDataWarga/tambahData.php" method="get">
                       <input type="text" name="cari">
                       <input type="submit" value="Cari">
                   </form>

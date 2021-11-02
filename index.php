@@ -37,23 +37,23 @@
         </a>        
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tambahData/tambahData.php">
+        <a class="nav-link collapsed" href="tambahDataWarga/tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Tambah Data Warga</span>
         </a>        
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="crudBantuan/bantuan.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Bantuan</span>
         </a>        
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="tambahDataPetugas/tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Tambah Data Admin</span>
         </a>        
-      </li>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">
           <i class="fas fa-fw fa-table"></i>
