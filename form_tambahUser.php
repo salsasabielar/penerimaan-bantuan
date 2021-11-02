@@ -89,9 +89,9 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Tambah User</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item">Manajemen User</li>
-              <li class="breadcrumb-item active" aria-current="page">Tambah User</li>
+              <li class="breadcrumb-item"><a href="manageUser.php">Manajemen User</a></li>
+              <li class="breadcrumb-item">Tambah User</li>
+              
             </ol>
           </div>
 
@@ -115,10 +115,10 @@
                     <div class="form-group">
                       <label for="role">Role</label>
                       <form method='POST' action=''>
-                      <select name="role">
-                      <option value="admin">Admin</option>
-                      <option value="user">User</option>
-                      </select>
+                        <select class="form-control" name="role">
+                          <option value="admin">Admin</option>
+                          <option value="user">User</option>
+                        </select>
                       </form>
                       <?php
                       if (isset($_POST['submit'])) {

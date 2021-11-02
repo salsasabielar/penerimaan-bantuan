@@ -39,7 +39,13 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="tambahData/tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
-          <span>Tambah Data</span>
+          <span>Tambah Data Warga</span>
+        </a>        
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="crudBantuan/bantuan.php">
+          <i class="fab fa-fw fa-wpforms"></i>
+          <span>Bantuan</span>
         </a>        
       </li>
       <li class="nav-item">
