@@ -91,9 +91,8 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Edit Data</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-              <li class="breadcrumb-item">Tambah Data</li>
-              <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
+              <li class="breadcrumb-item"><a href="../index.php">Tambah Data</a></li>
+              <li class="breadcrumb-item">Edit Data</li>
             </ol>
           </div>
 
@@ -115,24 +114,24 @@
                     <div class="form-group">
                       <label for="username">NIK</label>
                       <input type="hidden" name="id_penerima" value="<?php echo $data['id_penerima'] ?>">
-					            <input type="text" name="nik" value="<?php echo $data['nik'] ?>">                      
+					            <input type="text" class="form-control" name="nik" value="<?php echo $data['nik'] ?>">                      
                     </div>
                     <div class="form-group">
                       <label for="password">Nama</label>
-                      <input type="text" name="nama" value="<?php echo $data['nama'] ?>">
+                      <input type="text" class="form-control" name="nama" value="<?php echo $data['nama'] ?>">
                     </div>
                     <div class="form-group">
                     <div class="form-group">
                       <label for="role">Tempat, Tanggal Lahir</label>
-                      <input type="text" name="ttl" value="<?php echo $data['ttl'] ?>">
+                      <input type="text" class="form-control" name="ttl" value="<?php echo $data['ttl'] ?>">
                     </div>
                     <div class="form-group">
                       <label for="role">Pekerjaan</label>
-                      <input type="text" name="pekerjaan" value="<?php echo $data['pekerjaan'] ?>">
+                      <input type="text" class="form-control" name="pekerjaan" value="<?php echo $data['pekerjaan'] ?>">
                     </div>
                     <div class="form-group">
                       <label for="role">Jenis Kelamin</label>
-                      <input type="text" name="jenisKelamin" value="<?php echo $data['jenisKelamin'] ?>">
+                      <input type="text" class="form-control" name="jenisKelamin" value="<?php echo $data['jenisKelamin'] ?>">
                     </div>
                     <h5><b>Kondisi Calon Penerima Bantuan</b></h5>
                     <div class="form-group">
