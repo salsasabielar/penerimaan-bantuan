@@ -37,11 +37,16 @@
         </a>        
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tambahData.php">
+        <a class="nav-link collapsed" href="../tambahDataWarga/tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Tambah Data</span>
-        </a>
-        
+        </a>        
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="tambahKriteria.php">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Kriteria</span>
+        </a>        
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="../laporan.php">
@@ -91,8 +96,7 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Edit Data</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-              <li class="breadcrumb-item">Tambah Data</li>
+              <li class="breadcrumb-item"><a href="tambahKriteria.php">Tambah Data</a></li>
               <li class="breadcrumb-item active" aria-current="page">Edit Data</li>
             </ol>
           </div>
@@ -115,7 +119,7 @@
                     <div class="form-group">
                       <label for="nama">Kriteria</label>
                       <input type="hidden" name="id_kriteria" value="<?php echo $data['id_kriteria'] ?>">
-					            <input type="text" name="nama" value="<?php echo $data['nama'] ?>">                      
+					            <input type="text" class="form-control" name="nama" value="<?php echo $data['nama'] ?>">                      
                     </div>
                     <div class="form-group">
                       <div class="custom-file">

@@ -42,24 +42,35 @@
           <span>Tambah Data Warga</span>
         </a>        
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="crudKriteria/tambahKriteria.php">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Kriteria</span>
+        </a>        
+      </li>
       <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="crudBantuan/bantuan.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Bantuan</span>
         </a>        
       </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="tambahDataPetugas/tambahData.php">
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="tambahData/tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
-          <span>Tambah Data Admin</span>
+          <span>Tambah Data</span>
         </a>        
-      </li> -->
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan</span>
-        </a>
-        
+        </a>        
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="hapus.php">
+          <i class="fab fa-fw fa-wpforms"></i>
+          <span>Hapus</span>
+        </a>        
       </li>
       <li class="nav-item">
         <a class="nav-link" href="manageUser.php">

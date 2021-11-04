@@ -42,7 +42,12 @@
           <span>Tambah Data Warga</span>
         </a>        
       </li>
-      
+      <li class="nav-item">
+        <a class="nav-link" href="crudKriteria/tambahKriteria.php">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Kriteria</span>
+        </a>        
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">
           <i class="fas fa-fw fa-table"></i>

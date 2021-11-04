@@ -40,8 +40,13 @@
         <a class="nav-link collapsed" href="tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Tambah Data Warga</span>
-        </a>
-        
+        </a>        
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../crudKriteria/tambahKriteria.php">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Kriteria</span>
+        </a>        
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="../laporan.php">

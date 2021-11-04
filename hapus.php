@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <img src="img/logo/SSIB.png">
         </div>
@@ -37,7 +37,7 @@
         </a>        
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tambahData/tambahData.php">
+        <a class="nav-link collapsed" href="tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Tambah Data Warga</span>
         </a>        
@@ -61,7 +61,6 @@
           <span>Manajemen User</span>
         </a>
       </li>
-     
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -71,7 +70,8 @@
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-          <ul class="navbar-nav ml-auto">            
+          <ul class="navbar-nav ml-auto">
+              
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
@@ -89,79 +89,81 @@
           </ul>
         </nav>
         <!-- Topbar -->
-
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Tambah User</h1>
+            <h1 class="h3 mb-0 text-gray-800">Data Terhapus</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="manageUser.php">Manajemen User</a></li>
-              <li class="breadcrumb-item">Tambah User</li>
-              
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+              <li class="breadcrumb-item">Hapus</li>
             </ol>
           </div>
 
+          <!-- Row -->
           <div class="row">
-          <div class="col-lg-12">
+            <!-- Datatables -->
+            <div class="col-lg-12">
+              <!-- Simple Tables -->
               <div class="card">
-                
-                <div class="card mb-4">
-                
-                <div class="card-body">
-                <form action="crudManageUser/addAksi.php" method="post">
-                    <div class="form-group">
-                      <label for="username">Username</label>
-                      <input type="text" class="form-control" name="username">                      
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="text" class="form-control" name="password">
-                    </div>
-                    <div class="form-group">
-                    <div class="form-group">
-                      <label for="role">Role</label>
-                      <form method='POST' action=''>
-                        <select class="form-control" name="role">
-                          <option value="admin">Admin</option>
-                          <option value="user">User</option>
-                        </select>
-                      </form>
-                      <?php
-                      if (isset($_POST['submit'])) {
-                      $role = $_POST['role'];
-                      $sql = $db->query("INSERT INTO user (role) VALUES ('$role') ");
-                      header('location:../manageUser.php');
-                      }
-                      ?>
-                    </div>
-                    <div class="form-group">
-                      <div class="custom-file">
-                        
-                      </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <!-- <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahData.php" class="btn btn-sm btn-primary">Tambah Data</a></h6> -->
+                  <form action="tambahDataWarga/tambahData.php" method="get">
+                      <input type="text" name="cari">
+                      <input type="submit" value="Cari">
                   </form>
+                  <?php 
+                        if(isset($_GET['cari'])){
+                            $cari = $_GET['cari'];
+                            echo "<b>Hasil pencarian : ".$cari."</b>";
+                        }
+                    ?>
                 </div>
-              </div>
-                
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>No.</th>
+                        <th>Nama </th>
+                        <th>Alasan</th>
+                      </tr>
+                      <?php 
+                          include "crudManageUser/config.php";
+                          $query_mysqli = mysqli_query($koneksi,"SELECT * FROM data_terhapus")or die(mysqli_error());
+                          
+                          if(isset($_GET['cari'])){
+                              $cari = $_GET['cari'];
+                              $query = mysqli_query($koneksi,"SELECT * FROM data_terhapus WHERE nama LIKE '%".$cari."%' OR nik LIKE '%".$cari."%'" ); 
+                            }
+                              else{
+                                  $query = mysqli_query($koneksi,"SELECT * FROM data_terhapus"); 
+                              }
+                          $nomor = 1;
+                          if($query){
+                          while($data = mysqli_fetch_array($query)){
+                          ?> 
+                            <tr>
+                              <td><?php echo $nomor++; ?></td>
+                              <td><?php echo $data['nik']; ?></td>
+                              <td><?php echo $data['nama']; ?></td>
+                              <td><?php echo $data['alasan']; ?></td>
+                            </tr>
+                            <?php } }?>
+                      </thead>
+                    <tbody>                      
+                      
+                    </tbody>
+                  </table>
+                </div>
                 <div class="card-footer"></div>
               </div>
             </div>
-
-          
-
-            
-            <div class="col-lg-6">
-                            
-            </div>
           </div>
-          <!--Row-->
+          <!--Row-->         
 
         </div>
         <!---Container Fluid-->
       </div>
-      
+
     </div>
   </div>
 
@@ -174,6 +176,17 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/ruang-admin.min.js"></script>
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script>
+    $(document).ready(function () {
+      $('#dataTable').DataTable(); // ID From dataTable 
+      $('#dataTableHover').DataTable(); // ID From dataTable with Hover
+    });
+  </script>
 
 </body>
 
