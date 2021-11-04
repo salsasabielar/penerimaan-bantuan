@@ -39,7 +39,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="../tambahDataWarga/tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
-          <span>Tambah Data</span>
+          <span>Tambah Data Warga</span>
         </a>        
       </li>
       <li class="nav-item">
@@ -94,10 +94,10 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Kriteria</h1>
+            <h1 class="h3 mb-0 text-gray-800">Tambah Alasan Baru</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="tambahKriteria.php">Tambah Kriteria</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Edit Kriteria</li>
+              <li class="breadcrumb-item"><a href="alasanHapus.php">Alasan Hapus</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Tambah Alasan</li>
             </ol>
           </div>
 
@@ -108,34 +108,27 @@
                 <div class="card mb-4">
                 
                 <div class="card-body">
-                <?php 
-                include "../crudManageUser/config.php";
-                $id_kriteria = $_GET['id_kriteria'];
-                $query_mysqli = mysqli_query($koneksi,"SELECT * FROM kriteria WHERE id_kriteria='$id_kriteria'")or die(mysqli_error($koneksi));
-                $nomor = 1;
-                while($data = mysqli_fetch_array($query_mysqli)){
-                ?>
-                <form action="../crudKriteria/updateKriteria.php" method="post">
+                <form action="prosesTambah.php" method="post">
                     <div class="form-group">
-                      <label for="nama">Kriteria</label>
-                      <input type="hidden" name="id_kriteria" value="<?php echo $data['id_kriteria'] ?>">
-					            <input type="text" class="form-control" name="nama" value="<?php echo $data['nama'] ?>">                      
+                      <label for="nama">Alasan</label>
+                      <input type="text" class="form-control" name="alasan">                      
                     </div>
+
                     <div class="form-group">
                       <div class="custom-file">
                         
                       </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">Update & Simpan</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                   </form>
-                  <?php } ?>
                 </div>
               </div>
                 
                 <div class="card-footer"></div>
               </div>
             </div>
+
             <div class="col-lg-6">
                             
             </div>

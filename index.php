@@ -67,6 +67,12 @@
         </a>        
       </li>
       <li class="nav-item">
+        <a class="nav-link collapsed" href="crudAlasanHapus/alasanHapus.php">
+          <i class="fab fa-fw fa-wpforms"></i>
+          <span>Alasan Hapus</span>
+        </a>        
+      </li>
+      <li class="nav-item">
         <a class="nav-link collapsed" href="hapus.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Hapus</span>

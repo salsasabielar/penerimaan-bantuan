@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <img src="../img/logo/SSIB.png">
         </div>
@@ -39,7 +39,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="../tambahDataWarga/tambahData.php">
           <i class="fab fa-fw fa-wpforms"></i>
-          <span>Tambah Data</span>
+          <span>Tambah Data Warga</span>
         </a>        
       </li>
       <li class="nav-item">
@@ -61,7 +61,6 @@
           <span>Manajemen User</span>
         </a>
       </li>
-     
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -71,7 +70,8 @@
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-          <ul class="navbar-nav ml-auto">            
+          <ul class="navbar-nav ml-auto">
+              
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
@@ -80,72 +80,94 @@
                 <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>
-                  <a href="../logout.php">Logout</a>
-                  <!-- Logout -->
+                <a class="dropdown-item" href="logout.php">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>  
+                  Logout
                 </a>
               </div>
             </li>
           </ul>
         </nav>
         <!-- Topbar -->
-
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Kriteria</h1>
+            <h1 class="h3 mb-0 text-gray-800">Alasan Hapus Data</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="tambahKriteria.php">Tambah Kriteria</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Edit Kriteria</li>
+              <li class="breadcrumb-item"><a href="tambahKriteria.php">Home</a></li>
+              <li class="breadcrumb-item">Tambah Alasan</li>
             </ol>
           </div>
 
+          <!-- Row -->
           <div class="row">
-          <div class="col-lg-12">
+            <!-- Datatables -->
+            <div class="col-lg-12">
+              <!-- Simple Tables -->
               <div class="card">
-                
-                <div class="card mb-4">
-                
-                <div class="card-body">
-                <?php 
-                include "../crudManageUser/config.php";
-                $id_kriteria = $_GET['id_kriteria'];
-                $query_mysqli = mysqli_query($koneksi,"SELECT * FROM kriteria WHERE id_kriteria='$id_kriteria'")or die(mysqli_error($koneksi));
-                $nomor = 1;
-                while($data = mysqli_fetch_array($query_mysqli)){
-                ?>
-                <form action="../crudKriteria/updateKriteria.php" method="post">
-                    <div class="form-group">
-                      <label for="nama">Kriteria</label>
-                      <input type="hidden" name="id_kriteria" value="<?php echo $data['id_kriteria'] ?>">
-					            <input type="text" class="form-control" name="nama" value="<?php echo $data['nama'] ?>">                      
-                    </div>
-                    <div class="form-group">
-                      <div class="custom-file">
-                        
-                      </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Update & Simpan</button>
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahAlasan.php" class="btn btn-sm btn-primary">Tambah Baru</a></h6>
+                  <form action="../crudAlasanHapus/alasanHapus.php" method="get">
+                      <input type="text" name="cari">
+                      <input type="submit" value="Cari">
                   </form>
-                  <?php } ?>
+                  <?php 
+                        if(isset($_GET['cari'])){
+                            $cari = $_GET['cari'];
+                            echo "<b>Hasil pencarian : ".$cari."</b>";
+                        }
+                    ?>
                 </div>
-              </div>
-                
+                <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>No.</th>
+                        <th>Alasan</th>
+                        <th>Action</th>
+                      </tr>
+                      <?php 
+                          include "../crudManageUser/config.php";
+                          $query_mysqli = mysqli_query($koneksi,"SELECT * FROM alasan_hapus")or die(mysqli_error());
+                          
+                          if(isset($_GET['cari'])){
+                              $cari = $_GET['cari'];
+                              $query = mysqli_query($koneksi,"SELECT * FROM alasan_hapus WHERE alasan LIKE '%".$cari."%' OR nik LIKE '%".$cari."%'" ); 
+                            }
+                              else{
+                                  $query = mysqli_query($koneksi,"SELECT * FROM alasan_hapus"); 
+                              }
+                          $nomor = 1;
+                          if($query){
+                          while($data = mysqli_fetch_array($query)){
+                          ?> 
+                            <tr>
+                              <td><?php echo $nomor++; ?></td>
+                              <td><?php echo $data['alasan']; ?></td>
+                              <td>
+                                <a class="btn btn-sm btn-primary" href="form_editAlasan.php?id_alasan=<?php echo $data['id_alasan']; ?>">Edit</a> 
+                                <a class="btn btn-sm btn-primary" href="deleteAlasan.php?id_alasan=<?php echo $data['id_alasan']; ?>">Hapus</a>                                
+                              </td>
+                            </tr>
+                            <?php } }?>
+                      </thead>
+                    <tbody>
+                      
+                    </tbody>
+                  </table>
+                </div>
                 <div class="card-footer"></div>
               </div>
-            </div>
-            <div class="col-lg-6">
-                            
             </div>
           </div>
           <!--Row-->
 
+         
+
         </div>
         <!---Container Fluid-->
       </div>
-      
+
     </div>
   </div>
 
@@ -158,6 +180,17 @@
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="../js/ruang-admin.min.js"></script>
+  <!-- Page level plugins -->
+  <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script>
+    $(document).ready(function () {
+      $('#dataTable').DataTable(); // ID From dataTable 
+      $('#dataTableHover').DataTable(); // ID From dataTable with Hover
+    });
+  </script>
 
 </body>
 

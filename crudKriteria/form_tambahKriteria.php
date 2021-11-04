@@ -94,11 +94,10 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Tambah Data</h1>
+            <h1 class="h3 mb-0 text-gray-800">Tambah Kriteria Baru</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
-              <li class="breadcrumb-item">Tambah Data</li>
-              <li class="breadcrumb-item active" aria-current="page">Tambah Data</li>
+              <li class="breadcrumb-item"><a href="tambahKriteria.php">Kriteria</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Tambah Kriteria</li>
             </ol>
           </div>
 
