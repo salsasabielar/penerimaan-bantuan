@@ -123,13 +123,24 @@
                     <thead class="thead-light">
                       <tr>
                         <th>No.</th>
+                        <th>NIK </th>
                         <th>Nama </th>
                         <th>Alasan</th>
                       </tr>
                       <?php 
                           include "crudManageUser/config.php";
-                          $query_mysqli = mysqli_query($koneksi,"SELECT * FROM data_terhapus")or die(mysqli_error());
-                          
+                          $query_mysqli = mysqli_query($koneksi,"SELECT * from data_terhapus")or die(mysqli_error());
+                          // $jadwal = mysqli_query($connection, "SELECT * from jadwal  INNER JOIN guru 
+                          //               ON jadwal.id_guru = guru.id_guru INNER JOIN kelas ON jadwal.id_kelas = kelas.id_kelas WHERE kelas.id_kelas = 1");
+                                        // $id_jadwal =1;
+                                        $nomor = 1;
+                                        foreach ($query_mysqli as $data){
+                                        echo "<tr>
+                                        <td><?php echo $nomor++; ?></td>
+                                            <td>".$data["nik"]."</td>
+                                            <td>".$data["nama"]."</td>
+                                            <td>".$data["alasan"]."</td>
+                                            ";
                           if(isset($_GET['cari'])){
                               $cari = $_GET['cari'];
                               $query = mysqli_query($koneksi,"SELECT * FROM data_terhapus WHERE nama LIKE '%".$cari."%' OR nik LIKE '%".$cari."%'" ); 
@@ -140,14 +151,16 @@
                           $nomor = 1;
                           if($query){
                           while($data = mysqli_fetch_array($query)){
+                          }
                           ?> 
-                            <tr>
+                            <!-- <tr>
                               <td><?php echo $nomor++; ?></td>
                               <td><?php echo $data['nik']; ?></td>
                               <td><?php echo $data['nama']; ?></td>
                               <td><?php echo $data['alasan']; ?></td>
-                            </tr>
+                            </tr> -->
                             <?php } }?>
+                          
                       </thead>
                     <tbody>                      
                       
