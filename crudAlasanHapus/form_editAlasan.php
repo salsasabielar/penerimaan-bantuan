@@ -43,9 +43,9 @@
         </a>        
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="tambahKriteria.php">
+        <a class="nav-link" href="alasanHapus.php">
           <i class="far fa-fw fa-window-maximize"></i>
-          <span>Kriteria</span>
+          <span>Alasan Hapus</span>
         </a>        
       </li>
       <li class="nav-item">
@@ -94,10 +94,10 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Kriteria</h1>
+            <h1 class="h3 mb-0 text-gray-800">Edit Alasan</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="tambahKriteria.php">Tambah Kriteria</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Edit Kriteria</li>
+              <li class="breadcrumb-item"><a href="alasanHapus.php">Alasan Hapus</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Edit Alasan</li>
             </ol>
           </div>
 
@@ -110,16 +110,16 @@
                 <div class="card-body">
                 <?php 
                 include "../crudManageUser/config.php";
-                $id_kriteria = $_GET['id_kriteria'];
-                $query_mysqli = mysqli_query($koneksi,"SELECT * FROM kriteria WHERE id_kriteria='$id_kriteria'")or die(mysqli_error($koneksi));
+                $id_alasan = $_GET['id_alasan'];
+                $query_mysqli = mysqli_query($koneksi,"SELECT * FROM alasan WHERE id_alasan='$id_alasan'")or die(mysqli_error($koneksi));
                 $nomor = 1;
                 while($data = mysqli_fetch_array($query_mysqli)){
                 ?>
-                <form action="../crudKriteria/updateKriteria.php" method="post">
+                <form action="../crudAlasanHapus/update.php" method="post">
                     <div class="form-group">
-                      <label for="nama">Kriteria</label>
-                      <input type="hidden" name="id_kriteria" value="<?php echo $data['id_kriteria'] ?>">
-					            <input type="text" class="form-control" name="nama" value="<?php echo $data['nama'] ?>">                      
+                      <label for="nama">Alasan</label>
+                      <input type="hidden" name="id_alasan" value="<?php echo $data['id_alasan'] ?>">
+					            <input type="text" class="form-control" name="alasan" value="<?php echo $data['alasan'] ?>">                      
                     </div>
                     <div class="form-group">
                       <div class="custom-file">
