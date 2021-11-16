@@ -115,7 +115,7 @@
                 $nomor = 1;
                 while($data = mysqli_fetch_array($query_mysqli)){
                 ?>
-                <form action="../tambahDataPetugas/updateData.php" method="post">
+                <form action="../tambahDataWarga/updateData.php" method="post">
                     <div class="form-group">
                       <label for="username">NIK</label>
                       <input type="hidden" name="id_warga" value="<?php echo $data['id_warga'] ?>">
@@ -146,7 +146,47 @@
                         
                       </div>
                     </div>
+                    <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
                     
+                      <tr>
+                        <th>No.</th>
+                        <th>Uraian Kriteria</th>
+                        <th>Ya</th>
+                        <th>Tidak</th>
+
+						
+
+                        <?php 
+                          
+                        
+                        	$tampil ="SELECT * FROM kriteria ORDER BY id_kriteria asc";
+                          $hasil=mysqli_query($koneksi,$tampil);  
+                          $no1=0;
+                          $no2=0; 
+
+                          $nomor = 1;
+                          while ($data=mysqli_fetch_array($hasil)){
+                            
+                            echo "<tr ><td>$nomor</td><td>$data[nama]</td>
+                                <td><input type=checkbox name=ya[] value=$data[id_kriteria] id=id1$no1></td>
+                                <td><input type=checkbox name=tidak[] value=$data[id_kriteria] id=id2$no2></td>";  
+                            $nomor++;
+                            $no1++;
+                            $no2++;
+                           
+								?>
+                          <?php } ?>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                  <div class="form-group">
+                      <div class="custom-file">
+                        
+                      </div>
+                    </div>
                     <button type="submit" class="btn btn-primary">Update & Simpan</button>
                   </form>
                   <?php } ?>
