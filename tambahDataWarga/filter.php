@@ -4,7 +4,6 @@ $ceka=$_POST['ya'];
 
 $jumlaha=count($ceka)*1;
 
-
 $tampil ="SELECT * FROM warga ORDER BY id_warga desc LIMIT 1";
                           $hasil=mysqli_query($koneksi,$tampil);  
                           
@@ -13,14 +12,10 @@ $tampil ="SELECT * FROM warga ORDER BY id_warga desc LIMIT 1";
                            
                           }
                           //echo $id_warga;
-
-                        
-                        
+                      
 for($i=0; $i < $jumlaha; $i++)
 {
     if(mysqli_query ($koneksi, "INSERT INTO kriteria_warga (id_kriteria, id_warga) values ($ceka[$i], $id_warga)")) {
-        
-        
         
       } else{
        echo mysqli_error($koneksi);
