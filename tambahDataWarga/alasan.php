@@ -5,6 +5,7 @@
 </head>
 <body>
 <form action="prosesAlasan.php" method="post">
+	<input type="text" name="nik" value="<?php echo $_GET['nik'];?>" >
     Pilih Salah Satu Untuk Menghapus Data: <br>
     <input type="radio" name="alasan" value="Tidak Layak"> Tidak Layak<br>
     <input type="radio" name="alasan" value="Meninggal"> Meninggal<br>

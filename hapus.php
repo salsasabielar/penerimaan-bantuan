@@ -140,7 +140,7 @@
                                             <td>".$data["nik"]."</td>
                                             <td>".$data["nama"]."</td>
                                             <td>".$data["alasan"]."</td>
-                                            ";
+                                            </tr>";
                           if(isset($_GET['cari'])){
                               $cari = $_GET['cari'];
                               $query = mysqli_query($koneksi,"SELECT * FROM data_terhapus WHERE nama LIKE '%".$cari."%' OR nik LIKE '%".$cari."%'" ); 
