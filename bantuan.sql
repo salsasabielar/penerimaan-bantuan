@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Nov 2021 pada 15.13
+-- Waktu pembuatan: 17 Nov 2021 pada 11.05
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -132,32 +132,31 @@ CREATE TABLE `data_terhapus` (
 
 CREATE TABLE `kriteria` (
   `id_kriteria` int(11) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `hasil` tinyint(1) NOT NULL
+  `nama` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `kriteria`
 --
 
-INSERT INTO `kriteria` (`id_kriteria`, `nama`, `hasil`) VALUES
-(3, 'Penerima PKH/BPNT/Pra Kerja/Calon penerima BST Kemensos', 0),
-(9, 'Kehilangan mata pencaharian', 0),
-(10, 'Belum Terdata DTKS (exclusion error)', 0),
-(11, 'Mempunyai anggota keluarga yang rentan sakit menahun atau kronis, termasuk yang positif terkena COVID-19 dan harus melakukan isolasi diri', 0),
-(12, 'Memiliki sumber penghasilan kurang dari RP.750.000,-/bulan', 0),
-(13, 'Tutup usaha', 0),
-(14, 'Pendapatan atau omset berkurang drastis akibat pandemi COVID-19', 0),
-(15, 'Tidak mampu berobat ke pelayanan kesehatan dikarenakan tidak mempunyai uang dan jaminan kesehatan', 0),
-(16, 'Tidak memiliki tabungan/barang yang mudah dijual/digadaikan dengan nilai gadai minimal Rp.1.000.000,-', 0),
-(17, 'Dalam satu rumah dihuni lebih dari satu kepala keluarga', 0),
-(18, 'Keluarga cerai (ibu-ibu kepala keluarga) yang tidak memiliki harta gono gini (harta warisan)', 0),
-(19, 'Tidak mempunyai keluarga lain yang dapat membantu', 0),
-(20, 'Mempunyai anggota keluarga disabilitas', 0),
-(21, 'Rumah dengan dinding bambu/kayu murah/tembok tanpa plester', 0),
-(22, 'Makan 1-2 kali/hari', 0),
-(23, 'Konsumsi daging/susu/ayam hanya 1 kali/minggu', 0),
-(24, 'Lansia (di atas 60 tahun) terlantar', 0);
+INSERT INTO `kriteria` (`id_kriteria`, `nama`) VALUES
+(3, 'Penerima PKH/BPNT/Pra Kerja/Calon penerima BST Kemensos'),
+(9, 'Kehilangan mata pencaharian'),
+(10, 'Belum Terdata DTKS (exclusion error)'),
+(11, 'Mempunyai anggota keluarga yang rentan sakit menahun atau kronis, termasuk yang positif terkena COVID-19 dan harus melakukan isolasi diri'),
+(12, 'Memiliki sumber penghasilan kurang dari RP.750.000,-/bulan'),
+(13, 'Tutup usaha'),
+(14, 'Pendapatan atau omset berkurang drastis akibat pandemi COVID-19'),
+(15, 'Tidak mampu berobat ke pelayanan kesehatan dikarenakan tidak mempunyai uang dan jaminan kesehatan'),
+(16, 'Tidak memiliki tabungan/barang yang mudah dijual/digadaikan dengan nilai gadai minimal Rp.1.000.000,-'),
+(17, 'Dalam satu rumah dihuni lebih dari satu kepala keluarga'),
+(18, 'Keluarga cerai (ibu-ibu kepala keluarga) yang tidak memiliki harta gono gini (harta warisan)'),
+(19, 'Tidak mempunyai keluarga lain yang dapat membantu'),
+(20, 'Mempunyai anggota keluarga disabilitas'),
+(21, 'Rumah dengan dinding bambu/kayu murah/tembok tanpa plester'),
+(22, 'Makan 1-2 kali/hari'),
+(23, 'Konsumsi daging/susu/ayam hanya 1 kali/minggu'),
+(24, 'Lansia (di atas 60 tahun) terlantar');
 
 -- --------------------------------------------------------
 
@@ -170,6 +169,32 @@ CREATE TABLE `kriteria_warga` (
   `id_kriteria` int(11) NOT NULL,
   `id_warga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kriteria_warga`
+--
+
+INSERT INTO `kriteria_warga` (`id_kriteriaWarga`, `id_kriteria`, `id_warga`) VALUES
+(194, 18, 45),
+(196, 9, 46),
+(198, 23, 47),
+(199, 9, 49),
+(200, 11, 49),
+(201, 12, 49),
+(202, 13, 49),
+(203, 14, 49),
+(204, 15, 49),
+(205, 16, 49),
+(206, 17, 49),
+(207, 18, 49),
+(208, 19, 49),
+(209, 20, 49),
+(210, 21, 49),
+(211, 14, 50),
+(212, 15, 50),
+(213, 16, 50),
+(214, 17, 50),
+(215, 18, 50);
 
 -- --------------------------------------------------------
 
@@ -256,19 +281,20 @@ CREATE TABLE `warga` (
   `alamat` varchar(50) NOT NULL,
   `ttl` varchar(50) NOT NULL,
   `pekerjaan` varchar(50) NOT NULL,
-  `jenisKelamin` varchar(50) NOT NULL
+  `jenisKelamin` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `warga`
 --
 
-INSERT INTO `warga` (`id_warga`, `nik`, `nama`, `alamat`, `ttl`, `pekerjaan`, `jenisKelamin`) VALUES
-(1, '13235478', 'Irma', 'Banu rt 12 rw 02', 'Malang,16-08-2000', 'Petani', 'Perempuan'),
-(3, '54787876', 'sals', 'banu rt12 rw 02', 'malang,12-02-2000', 'Petani', 'perempuan'),
-(7, '13124', 'nana', 'ngantang`', 'malang, 21-01-1988', 'swasta', 'perempuan'),
-(8, '', 'ana', 'ngantang', 'malang, 21-9-1880', 'guru ngaji', 'perempuan'),
-(9, '', '', '', '', '', '');
+INSERT INTO `warga` (`id_warga`, `nik`, `nama`, `alamat`, `ttl`, `pekerjaan`, `jenisKelamin`, `status`) VALUES
+(43, '55555555', 'ria', 'ngantang', 'malang, 1-1-1990', 'swasta', 'perempuan', 'Layak'),
+(46, '666', 'eni', 'ngantang', 'malang, 21-01-1988', 'guru ngaji', 'perempuan', 'Tidak Layak'),
+(47, '3507046011000001', 'Salsa Sabiela Rosyada', 'Malang', 'Malang, 20-11-2000', 'Mahasiswa', 'Perempuan', 'Tidak Layak'),
+(49, '321312435315', 'nola', 'ngantang', 'malang, 1-1-1990', 'swasta', 'Perempuan', 'Sangat Layak'),
+(50, '13124', 'dasfs', 'fsfa', 'afs', 'fsafa', 'fafa', 'Tidak Layak');
 
 --
 -- Indexes for dumped tables
@@ -385,7 +411,7 @@ ALTER TABLE `kriteria`
 -- AUTO_INCREMENT untuk tabel `kriteria_warga`
 --
 ALTER TABLE `kriteria_warga`
-  MODIFY `id_kriteriaWarga` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kriteriaWarga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
 
 --
 -- AUTO_INCREMENT untuk tabel `penerimabltdd`
@@ -409,7 +435,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `warga`
 --
 ALTER TABLE `warga`
-  MODIFY `id_warga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_warga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

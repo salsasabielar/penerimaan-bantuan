@@ -155,31 +155,37 @@
                         <th>Ya</th>
                         <th>Tidak</th>
 
-						
+                        	
 
                         <?php 
                           
                         
-                        	$tampil ="SELECT * FROM kriteria ORDER BY id_kriteria asc";
+                        	$tampil ="SELECT * FROM kriteria";
                           $hasil=mysqli_query($koneksi,$tampil);  
                           $no1=0;
-                          $no2=0; 
+                          $no2=0;                          
 
                           $nomor = 1;
-                          while ($data=mysqli_fetch_array($hasil)){
-                            
-                            echo "<tr ><td>$nomor</td><td>$data[nama]</td>
-                                <td><input type=checkbox name=ya[] value=$data[id_kriteria] id=id1$no1></td>
-                                <td><input type=checkbox name=tidak[] value=$data[id_kriteria] id=id2$no2></td>";  
+                          while ($data = mysqli_fetch_array($hasil)) {
+                            echo "<tr>
+                            <td>$nomor</td>
+                            <td>$data[nama]</td>
+                            <td><input type=checkbox name=ya[] value=$data[id_kriteria] <?php if (in_array($data[id_kriteria])) checked=checked;?> </td>                            
+                            <td><input type=checkbox name=tidak[] value=$data[id_kriteria] id=id2$no2></td>";  
                             $nomor++;
                             $no1++;
                             $no2++;
+                            
+                          }
+                          
+                            
+                            
                            
 								?>
-                          <?php } ?>
+                          <?php  ?>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody>                                                                                                                                                                                                                               
                     </tbody>
                   </table>
                   <div class="form-group">
