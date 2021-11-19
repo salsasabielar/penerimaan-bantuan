@@ -163,26 +163,38 @@
                         	$tampil ="SELECT * FROM kriteria";
                           $hasil=mysqli_query($koneksi,$tampil);  
                           $no1=0;
-                          $no2=0;                          
-
+                          $no2=0;    
                           $nomor = 1;
                           while ($data = mysqli_fetch_array($hasil)) {
-                            echo "<tr>
-                            <td>$nomor</td>
-                            <td>$data[nama]</td>
-                            <td><input type=checkbox name=ya[] value=$data[id_kriteria] <?php if (in_array($data[id_kriteria])) checked=checked;?> </td>                            
-                            <td><input type=checkbox name=tidak[] value=$data[id_kriteria] id=id2$no2></td>";  
-                            $nomor++;
-                            $no1++;
-                            $no2++;
-                            
+                            ?>
+                                
+                                <tr>
+                                <td><?php echo $nomor; ?></td>
+                                <td><?php echo $data['nama']; ?></td>
+                                <td><input type=checkbox name=ya[] value=<?php echo $data['id_kriteria'] ;
+                                $query = "SELECT * FROM kriteria_warga WHERE id_warga='$id_warga'";
+                                $result = mysqli_query($koneksi, $query); 
+                                while ($row = mysqli_fetch_array($result)) {
+                                  if($data['id_kriteria'] == $row['id_kriteria']){
+                                    ?> checked=checked  <?php 
+                                  }
+    
+                                }     ?>
+                                
+                                
+                                
+                                >
+                              </td>                            
+                                <td><input type=checkbox name=tidak[] value=$data[id_kriteria] id=id2$no2></td> </tr> <?php
+                                $nomor++;
+                                $no1++;
+                                $no2++;
+                                         
+                         
                           }
-                          
-                            
-                            
-                           
-								?>
-                          <?php  ?>
+
+								          ?>
+                          <?php } ?>
                       </tr>
                     </thead>
                     <tbody>                                                                                                                                                                                                                               
@@ -195,7 +207,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Update & Simpan</button>
                   </form>
-                  <?php } ?>
+                  <?php  ?>
                 </div>
               </div>
                 
