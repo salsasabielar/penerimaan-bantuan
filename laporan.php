@@ -107,34 +107,82 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Simple Tables</h6>
                 </div>
                 <div class="table-responsive">
+                <?php $thn_ini=date("Y");?>
+                                      <table id="zero_config" class="table table-striped table-bordered no-wrap">
+                                          <thead>
+                                          <form method="POST" action="">
+                                          <td>-Pilih Tahun- 
+                                            <select name="thn_ini">
+                                            <?php
+                                            $mulai= date('Y') - 50;
+                                            for($i = $mulai;$i<$mulai + 100;$i++){
+                                                $sel = $i == date('Y') ? ' selected="selected"' : '';
+                                                echo '<option value="'.$i.'"'.$sel.'>'.$i.'</option>';
+                                            }
+                                            ?>
+                                            </select></td> 
+                                            
+                                          <td><button type="submit" name="cari" class="btn btn-danger">Cari</td>
+                                          <td><a href="cetak-pertahun.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>" class="btn btn-success">Cetak</a></td>
+                                          <td><a target="_blank" href="cetak-pertahun-pdf.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="img/pd.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
+                                          <td><a target="_blank" href="cetak-pertahun-excel.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="img/ex.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
+                                          </tr>
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Item</th>
+                      <th>No.</th>
+                        <th>NIK</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>Tempat, Tanggal Lahir</th>
+                        <th>Pekerjaan</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tanggal Survey</th>
                         <th>Status</th>
-                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td><a href="#">RA0449</a></td>
-                        <td>Udin Wayang</td>
-                        <td>Nasi Padang</td>
-                        <td><span class="badge badge-success">Delivered</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA5324</a></td>
-                        <td>Jaenab Bajigur</td>
-                        <td>Gundam 90' Edition</td>
-                        <td><span class="badge badge-warning">Shipping</span></td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
+                      <?php 
+                          include "crudManageUser/config.php";
+                          $query_mysqli = mysqli_query($koneksi,"SELECT * FROM warga")or die(mysqli_error());
+                          
+                          if (isset($_POST['cari'])){
+                            $thn=$_POST['thn_ini'];
+                            $query= mysqli_query($koneksi, "SELECT * from warga where tanggalsurvey LIKE '%$_POST[thn_ini]%'");
+                            }else{
+                          $query = mysqli_query($koneksi,"SELECT * from warga");
+                          }
+                          $nomor = 1;
+                          if($query){
+                          while($data = mysqli_fetch_array($query)){
+                          ?> 
+                          <!-- if (isset($_POST['cari'])){
+                                              $thn=$_POST['thn_ini'];
+                                              $query= mysqli_query($koneksi, "SELECT * from coba where tanggal LIKE '%$_POST[thn_ini]%'");
+                                              }else{
+                                            $query = mysqli_query($koneksi,"SELECT * from coba");
+                                            }
+                                            $nomor=1;
+                                            $total=0;
+                                            if($query){
+                                              while($data = mysqli_fetch_array($query)){ -->
+                            <tr>
+                              <td><?php echo $nomor++; ?></td>
+                              <td><?php echo $data['nik']; ?></td>
+                              <td><?php echo $data['nama']; ?></td>
+                              <td><?php echo $data['alamat']; ?></td>
+                              <td><?php echo $data['ttl']; ?></td>
+                              <td><?php echo $data['pekerjaan']; ?></td>
+                              <td><?php echo $data['jenisKelamin']; ?></td>
+                              <td><?php echo $data['tanggalsurvey']; ?></td>
+                              <td><?php echo $data['status']; ?></td>
+                              <td>
+                              </td>
+                            </tr>
+                            <?php } }?>
                       
                     </tbody>
                   </table>

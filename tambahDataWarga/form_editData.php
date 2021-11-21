@@ -142,6 +142,10 @@
                       <input type="text" class="form-control" name="jenisKelamin" value="<?php echo $data['jenisKelamin'] ?>">
                     </div>
                     <div class="form-group">
+                      <label for="role">Jenis Kelamin</label>
+                      <input type="date" class="form-control" name="tanggalsurvey" value="<?php echo $data['tanggalsurvey'] ?>">
+                    </div>
+                    <div class="form-group">
                       <div class="custom-file">
                         
                       </div>

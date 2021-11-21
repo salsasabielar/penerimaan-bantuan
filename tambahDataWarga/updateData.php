@@ -8,6 +8,7 @@ $alamat = $_POST['alamat'];
 $ttl = $_POST['ttl'];
 $pekerjaan = $_POST['pekerjaan'];
 $jenisKelamin = $_POST['jenisKelamin'];
+$tanggalsurvey = $_POST['tanggalsurvey'];
 $ceka=$_POST['ya'];
 $jumlaha=count($ceka)*1;
 echo $jumlaha;
