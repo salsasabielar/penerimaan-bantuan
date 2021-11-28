@@ -48,18 +48,7 @@
           <span>Kriteria</span>
         </a>        
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="crudBantuan/bantuan.php">
-          <i class="fab fa-fw fa-wpforms"></i>
-          <span>Bantuan</span>
-        </a>        
-      </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="tambahData/tambahData.php">
-          <i class="fab fa-fw fa-wpforms"></i>
-          <span>Tambah Data</span>
-        </a>        
-      </li> -->
+      
       <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">
           <i class="fas fa-fw fa-table"></i>
