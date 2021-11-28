@@ -133,6 +133,10 @@
                       <label for="jenisKelamin">Jenis Kelamin</label>
                       <input type="text" class="form-control" name="jenisKelamin">
                     </div>
+                    <div class="form-group">
+                      <label for="tanggalsurvey">Tanggal Survey</label>
+                      <input type="date" class="form-control" name="tanggalsurvey">
+                    </div>
 
                     <div class="form-group">
                       <div class="custom-file">

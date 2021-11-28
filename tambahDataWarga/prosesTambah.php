@@ -6,10 +6,11 @@ $alamat = $_POST['alamat'];
 $ttl = $_POST['ttl'];
 $pekerjaan = $_POST['pekerjaan'];
 $jenisKelamin = $_POST['jenisKelamin'];
+$tanggalsurvey = $_POST['tanggalsurvey'];
 $status = $_POST['status'];
 
 $submit  = $_POST['submit'];
-if(mysqli_query ($koneksi, "INSERT INTO warga VALUES('','$nik','$nama','$alamat','$ttl','$pekerjaan','$jenisKelamin','status')")) {
+if(mysqli_query ($koneksi, "INSERT INTO warga VALUES('','$nik','$nama','$alamat','$ttl','$pekerjaan','$jenisKelamin','$tanggalsurvey','status')")) {
     header("location:kuisioner.php");
   } else{
    echo mysqli_error($koneksi);

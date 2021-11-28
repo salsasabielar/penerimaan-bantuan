@@ -129,6 +129,7 @@
                         <th>Tempat, Tanggal Lahir</th>
                         <th>Pekerjaan</th>
                         <th>Jenis Kelamin</th>
+                        <th>Tanggal Survey</th>
                         <th>Status</th>
                         <th>Action</th>
                       </tr>
@@ -155,6 +156,7 @@
                               <td><?php echo $data['ttl']; ?></td>
                               <td><?php echo $data['pekerjaan']; ?></td>
                               <td><?php echo $data['jenisKelamin']; ?></td>
+                              <td><?php echo $data['tanggalsurvey']; ?></td>
                               <td><?php echo $data['status']; ?></td>
                               <td>
                                 <a class="btn btn-sm btn-primary" href="form_editData.php?id_warga=<?php echo $data['id_warga']; ?>">Edit</a> 
