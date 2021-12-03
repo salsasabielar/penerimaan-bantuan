@@ -1,5 +1,5 @@
 <?php 
-include "crudManageUuser/config.php" ;
+include "./crudManageUuser/config.php" ;
 ?>
 <body onLoad="javascript:print()"> 
 <style type="text/css">
@@ -30,9 +30,9 @@ include "crudManageUuser/config.php" ;
     <th>Status</th> 
     </tr>
 <?php  
-    include "crudManageUuser/config.php";
+    include "./crudManageUuser/config.php";
         $thn_ini = date("Y");
-        $query = mysqli_query($conn,
+        $query = mysqli_query($koneksi,
                             "SELECT * from warga LIKE '%$_GET[thn_ini]%'");
         $nomor=1;
         $total=0;

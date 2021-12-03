@@ -93,10 +93,10 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Laporan</h1>
+            <h1 class="h3 mb-0 text-gray-800">Laporan Penerima Bantuan BLTDD Desa Banturejo</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item">Laporan</li>
+              <li class="breadcrumb-item">Laporan Penerima Bantuan BLTDD Desa Banturejo</li>
             </ol>
           </div>
 
@@ -112,7 +112,7 @@
                 <?php $thn_ini=date("Y");?>
                                       <table id="zero_config" class="table table-striped table-bordered no-wrap">
                                           <thead>
-                                          <form method="POST" action="">
+                                          <!-- <form method="POST" action="">
                                           <td>-Pilih Tahun- 
                                             <select name="thn_ini">
                                             <?php
@@ -122,12 +122,13 @@
                                                 echo '<option value="'.$i.'"'.$sel.'>'.$i.'</option>';
                                             }
                                             ?>
-                                            </select></td> 
+                                            </select></td>  -->
                                             
-                                          <td><button type="submit" name="cari" class="btn btn-danger">Cari</td>
-                                          <td><a href="cetak-pertahun.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>" class="btn btn-success">Cetak</a></td>
-                                          <td><a target="_blank" href="cetak-pertahun-pdf.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="img/pd.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
-                                          <td><a target="_blank" href="cetak-pertahun-excel.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="img/ex.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
+                                          <!-- <td><button type="submit" name="cari" class="btn btn-danger">Cari</td> -->
+                                          <td><a href="cetak.php?" class="btn btn-success">Cetak</a></td>
+                                          <!-- <td><a href="cetak-pertahun.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>" class="btn btn-success">Cetak</a></td> -->
+                                          <!-- <td><a target="_blank" href="./vendor/cetakpdf.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="img/pdf.jpeg" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
+                                          <td><a target="_blank" href="cetak-pertahun-excel.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="img/ex.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td> -->
                                           </tr>
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
