@@ -21,14 +21,12 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <img src="img/logo/SSIB.png">
-        </div>
-        
+        </div>        
       </a>
       <li class="nav-item active">
       </li>
       <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-       
+      <div class="sidebar-heading">       
       </div>
       <li class="nav-item">
         <a class="nav-link" href="index.php">
@@ -36,24 +34,35 @@
           <span>Dashboard</span>
         </a>        
       </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Menu
+      </div>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tambahDataWarga/tambahData.php">
-          <i class="fab fa-fw fa-wpforms"></i>
-          <span>Tambah Data Warga</span>
-        </a>        
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Data Warga</span>
+        </a>
+        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="tambahDataWarga/tambahData.php">Tambah Data</a>
+            <a class="collapse-item" href="hapus.php">Data Terhapus</a>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="crudKriteria/tambahKriteria.php">
-          <i class="far fa-fw fa-window-maximize"></i>
+          <i class="fab fa-fw fa-wpforms"></i>
           <span>Kriteria</span>
         </a>        
       </li>
+      
       <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan</span>
-        </a>
-        
+        </a>        
       </li>
       <li class="nav-item">
         <a class="nav-link" href="manageUser.php">
@@ -61,7 +70,7 @@
           <span>Manajemen User</span>
         </a>
       </li>
-     
+      <hr class="sidebar-divider">     
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -110,26 +119,27 @@
                 </div>
                 <div class="table-responsive">
                 <?php $thn_ini=date("Y");?>
-                                      <table id="zero_config" class="table table-striped table-bordered no-wrap">
-                                          <thead>
-                                          <!-- <form method="POST" action="">
-                                          <td>-Pilih Tahun- 
-                                            <select name="thn_ini">
-                                            <?php
-                                            $mulai= date('Y') - 50;
-                                            for($i = $mulai;$i<$mulai + 100;$i++){
-                                                $sel = $i == date('Y') ? ' selected="selected"' : '';
-                                                echo '<option value="'.$i.'"'.$sel.'>'.$i.'</option>';
-                                            }
-                                            ?>
-                                            </select></td>  -->
-                                            
-                                          <!-- <td><button type="submit" name="cari" class="btn btn-danger">Cari</td> -->
-                                          <td><a href="cetak.php?" class="btn btn-success">Cetak</a></td>
-                                          <!-- <td><a href="cetak-pertahun.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>" class="btn btn-success">Cetak</a></td> -->
-                                          <!-- <td><a target="_blank" href="./vendor/cetakpdf.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="img/pdf.jpeg" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
-                                          <td><a target="_blank" href="cetak-pertahun-excel.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="img/ex.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td> -->
-                                          </tr>
+                <table id="zero_config" class="table table-striped table-bordered no-wrap">
+                <thead>
+                  <form method="POST" action="">
+                    <td>-Pilih Tahun- 
+                     <select name="thn_ini">
+                      <?php
+                       $mulai= date('Y') - 50;
+                       for($i = $mulai;$i<$mulai + 100;$i++){
+                           $sel = $i == date('Y') ? ' selected="selected"' : '';
+                           echo '<option value="'.$i.'"'.$sel.'>'.$i.'</option>';
+                       }
+                       ?>
+                       </select></td> 
+                       
+                     <td><button type="submit" name="cari" class="btn btn-danger">Cari</td>
+                     <td><a class="btn btn-danger" href="cetak-pertahun.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini']; ?>">Cetak</a></td>
+                     <!-- <td><a href="cetak-pertahun.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini']; ?>">Cetak</a></td> -->
+                     <!-- <td><a target="_blank" href="cetak-pertahun-pdf.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="../img/pd.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td>
+                     <td><a target="_blank" href="cetak-pertahun-excel.php?module=cetakpertahun&thn_ini=<?php echo $_POST['thn_ini'];?>"><img src="../img/ex.png" height="50px" height="50px"></a>&nbsp;&nbsp;</td> -->
+                     </tr>      
+                                                                                
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
@@ -199,16 +209,7 @@
         <!---Container Fluid-->
       </div>
 
-       <!-- Footer -->
-       <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script>
-            </span>
-          </div>
-        </div>
-      </footer>
-      <!-- Footer -->
+       
     </div>
   </div>
 
