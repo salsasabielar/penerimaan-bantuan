@@ -4,8 +4,8 @@
     $pass = "";
     $dbname = "bantuan";
 
-    $connect = mysqli_connect($server, $user, $pass, $dbname);
-    if ($connect) {
+    $koneksi= mysqli_connect($server, $user, $pass, $dbname);
+    if ($koneksi) {
     
     } else {
     die("Connection Failed: " .mysqli_connect_error());

@@ -21,14 +21,12 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <img src="img/logo/SSIB.png">
-        </div>
-        
+        </div>        
       </a>
       <li class="nav-item active">
       </li>
       <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-       
+      <div class="sidebar-heading">       
       </div>
       <li class="nav-item">
         <a class="nav-link" href="index.php">
@@ -36,24 +34,41 @@
           <span>Dashboard</span>
         </a>        
       </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Menu
+      </div>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tambahDataWarga/tambahData.php">
-          <i class="fab fa-fw fa-wpforms"></i>
-          <span>Tambah Data Warga</span>
-        </a>        
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Data Warga</span>
+        </a>
+        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="tambahDataWarga/tambahData.php">Tambah Data</a>
+            <a class="collapse-item" href="hapus.php">Data Terhapus</a>
+            <a class="collapse-item" href="generateQrcode.php">Generate QR-Code</a>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="crudKriteria/tambahKriteria.php">
-          <i class="far fa-fw fa-window-maximize"></i>
+          <i class="fab fa-fw fa-wpforms"></i>
           <span>Kriteria</span>
         </a>        
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../scan/validasiPenerima">
+          <i class="fas fa-fw fa-columns"></i>
+          <span>Scanner</span>
+        </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan</span>
-        </a>
-        
+        </a>        
       </li>
       <li class="nav-item">
         <a class="nav-link" href="manageUser.php">
@@ -61,7 +76,13 @@
           <span>Manajemen User</span>
         </a>
       </li>
-     
+      <hr class="sidebar-divider">    
+      <li class="nav-item"> 
+        <a class="nav-link" href="logout.php">
+          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>  
+          <span>Keluar</span>
+        </a>
+      </li>
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -71,32 +92,16 @@
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-          <ul class="navbar-nav ml-auto">
-            
-            <div class="topbar-divider d-none d-sm-block"></div>
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="logout.php">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>  
-                  Logout
-                </a>
-              </div>
-            </li>
-          </ul>
+          
         </nav>
         <!-- Topbar -->
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Halaman Generate QR-CODE</h1>
+            <h1 class="h3 mb-0 text-gray-800">Generate QR-CODE</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
-              <li class="breadcrumb-item">Halaman Generate QR-CODE</li>
+              <li class="breadcrumb-item">Generate QR-CODE</li>
             </ol>
           </div>
 
@@ -165,16 +170,7 @@
         <!---Container Fluid-->
       </div>
 
-       <!-- Footer -->
-       <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script>
-            </span>
-          </div>
-        </div>
-      </footer>
-      <!-- Footer -->
+       
     </div>
   </div>
 

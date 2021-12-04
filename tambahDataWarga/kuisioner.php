@@ -71,7 +71,13 @@
           <span>Manajemen User</span>
         </a>
       </li>
-      <hr class="sidebar-divider">     
+      <hr class="sidebar-divider">  
+      <li class="nav-item"> 
+        <a class="nav-link" href="../logout.php">
+          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>  
+          <span>Keluar</span>
+        </a>
+      </li>   
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -81,22 +87,7 @@
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-          <ul class="navbar-nav ml-auto">            
-            <div class="topbar-divider d-none d-sm-block"></div>
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="../img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="logout.php">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>  
-                  Logout
-                </a>
-              </div>
-            </li>
-          </ul>
+          
         </nav>
         <!-- Topbar -->
         <!-- Container Fluid-->

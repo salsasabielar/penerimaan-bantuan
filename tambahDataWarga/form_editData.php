@@ -20,7 +20,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="img/logo/SSIB.png">
+          <img src="../img/logo/SSIB.png">
         </div>        
       </a>
       <li class="nav-item active">
@@ -29,7 +29,7 @@
       <div class="sidebar-heading">       
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="../index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>        
@@ -46,31 +46,43 @@
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="tambahDataWarga/tambahData.php">Tambah Data</a>
-            <a class="collapse-item" href="hapus.php">Data Terhapus</a>
+            <a class="collapse-item" href="../tambahDataWarga/tambahData.php">Tambah Data</a>
+            <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
+            <a class="collapse-item" href="generateQrcode.php">Generate QR-Code</a>
           </div>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="crudKriteria/tambahKriteria.php">
+        <a class="nav-link" href="../crudKriteria/tambahKriteria.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Kriteria</span>
         </a>        
       </li>
-      
       <li class="nav-item">
-        <a class="nav-link collapsed" href="laporan.php">
+        <a class="nav-link collapsed" href="../scan/validasiPenerima">
+          <i class="fas fa-fw fa-columns"></i>
+          <span>Scanner</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../laporan.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan</span>
         </a>        
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="manageUser.php">
+        <a class="nav-link" href="../manageUser.php">
           <i class="fas fa-fw fa-palette"></i>
           <span>Manajemen User</span>
         </a>
       </li>
-      <hr class="sidebar-divider">     
+      <hr class="sidebar-divider"> 
+      <li class="nav-item"> 
+        <a class="nav-link" href="../logout.php">
+          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>  
+          <span>Keluar</span>
+        </a>
+      </li>    
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -80,23 +92,7 @@
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-          <ul class="navbar-nav ml-auto">            
-            <div class="topbar-divider d-none d-sm-block"></div>
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="../img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>
-                  <a href="../logout.php">Logout</a>
-                  <!-- Logout -->
-                </a>
-              </div>
-            </li>
-          </ul>
+          
         </nav>
         <!-- Topbar -->
 
@@ -140,7 +136,7 @@
                     </div>
                     <div class="form-group">
                       <label for="role">Tempat, Tanggal Lahir</label>
-                      <input type="text" class="form-control" name="ttl" value="<?php echo $data['ttl'] ?>">
+                      <input type="date" class="form-control" name="ttl" value="<?php echo $data['ttl'] ?>">
                     </div>
                     <div class="form-group">
                       <label for="role">Pekerjaan</label>
@@ -151,7 +147,7 @@
                       <input type="text" class="form-control" name="jenisKelamin" value="<?php echo $data['jenisKelamin'] ?>">
                     </div>
                     <div class="form-group">
-                      <label for="role">Jenis Kelamin</label>
+                      <label for="role">Tanggal Survey</label>
                       <input type="date" class="form-control" name="tanggalsurvey" value="<?php echo $data['tanggalsurvey'] ?>">
                     </div>
                     <div class="form-group">
@@ -168,11 +164,7 @@
                         <th>Ya</th>
                         <th>Tidak</th>
 
-                        	
-
                         <?php 
-                          
-                        
                         	$tampil ="SELECT * FROM kriteria";
                           $hasil=mysqli_query($koneksi,$tampil);  
                           $no1=0;
@@ -184,19 +176,18 @@
                                 <tr>
                                 <td><?php echo $nomor; ?></td>
                                 <td><?php echo $data['nama']; ?></td>
-                                <td><input type=checkbox name=ya[] value=<?php echo $data['id_kriteria'] ;
-                                $query = "SELECT * FROM kriteria_warga WHERE id_warga='$id_warga'";
-                                $result = mysqli_query($koneksi, $query); 
-                                while ($row = mysqli_fetch_array($result)) {
-                                  if($data['id_kriteria'] == $row['id_kriteria']){
-                                    ?> checked=checked  <?php 
-                                  }
-    
-                                }     ?>
-                                
-                                
-                                
+                                <td>
+                                  <input type=checkbox name=ya[] value=<?php echo $data['id_kriteria'] ;
+                                    $query = "SELECT * FROM kriteria_warga WHERE id_warga='$id_warga'";
+                                    $result = mysqli_query($koneksi, $query); 
+                                    while ($row = mysqli_fetch_array($result)) {
+                                      if($data['id_kriteria'] == $row['id_kriteria']){
+                                        ?> checked=checked  <?php 
+                                      }
+        
+                                    }     ?>
                                 >
+
                               </td>                            
                                 <td><input type=checkbox name=tidak[] value=$data[id_kriteria] id=id2$no2></td> </tr> <?php
                                 $nomor++;

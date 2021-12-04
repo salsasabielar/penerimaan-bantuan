@@ -12,6 +12,10 @@ $tanggalsurvey = $_POST['tanggalsurvey'];
 $ceka=$_POST['ya'];
 $jumlaha=count($ceka)*1;
 echo $jumlaha;
+
+mysqli_query($koneksi,"UPDATE warga SET nik='$nik', nama='$nama', ttl='$ttl',pekerjaan='$pekerjaan',jenisKelamin='$jenisKelamin', tanggalsurvey='$tanggalsurvey'
+ WHERE id_warga='$id_warga'");
+
 if (mysqli_query($koneksi,"DELETE FROM kriteria_warga WHERE id_warga='$id_warga'")) {
     for($i=0; $i < $jumlaha; $i++){    
         if(mysqli_query ($koneksi, "INSERT INTO kriteria_warga (id_kriteria, id_warga) values ($ceka[$i], $id_warga)")) {               
