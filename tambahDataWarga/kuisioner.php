@@ -22,47 +22,56 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <img src="../img/logo/SSIB.png">
-        </div>
-        
+        </div>        
       </a>
       <li class="nav-item active">
       </li>
       <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-       
+      <div class="sidebar-heading">       
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="../index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>        
       </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Menu
+      </div>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="tambahDataWarga/tambahData.php">
-          <i class="fab fa-fw fa-wpforms"></i>
-          <span>Tambah Data Warga</span>
-        </a>        
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Data Warga</span>
+        </a>
+        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="tambahDataWarga/tambahData.php">Tambah Data</a>
+            <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="crudKriteria/tambahKriteria.php">
-          <i class="far fa-fw fa-window-maximize"></i>
+        <a class="nav-link" href="../crudKriteria/tambahKriteria.php">
+          <i class="fab fa-fw fa-wpforms"></i>
           <span>Kriteria</span>
         </a>        
       </li>
+      
       <li class="nav-item">
-        <a class="nav-link collapsed" href="laporan.php">
+        <a class="nav-link collapsed" href="../laporan.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan</span>
-        </a>
-        
+        </a>        
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="manageUser.php">
+        <a class="nav-link" href="../manageUser.php">
           <i class="fas fa-fw fa-palette"></i>
           <span>Manajemen User</span>
         </a>
       </li>
-     
+      <hr class="sidebar-divider">     
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
