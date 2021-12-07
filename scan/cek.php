@@ -58,6 +58,7 @@ include "../crudManageUser/config.php";
                     //     }
                     // Echo $nik;
                     $sql=mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$_POST[nik]'");
+                    //INNER JOIN penerimaan ON penerimaan.id_warga=warga.id_warga
                     $d=mysqli_fetch_array($sql);
 
                     if(mysqli_num_rows($sql) < 1){
@@ -76,24 +77,26 @@ include "../crudManageUser/config.php";
                             <th>NIK</th>
                             <th>Nama</th>
                             <th>Alamat</th>
-                            <th>Tempat, Tanggal Lahir</th>
-                            <th>Pekerjaan</th>
+                            <!-- <th>Tempat, Tanggal Lahir</th>
+                            <th>Pekerjaan</th> -->
                             <th>Jenis Kelamin</th>
-                            <th>Tanggal Survey</th>
-                            <th>Status</th>
+                            <!-- <th>Tanggal Survey</th> -->
+                            <th>Tanggal Penerimaan</th>
+                            <!-- <th>Status</th> -->
                             <th>Action</th>
                         </tr>
                         <tr>
                             <td><?php echo $d['nik']; ?></td>
                             <td><?php echo $d['nama']; ?></td>
                             <td><?php echo $d['alamat']; ?></td>
-                            <td><?php echo $d['ttl']; ?></td>
-                            <td><?php echo $d['pekerjaan']; ?></td>
+                            <!-- <td><?php echo $d['ttl']; ?></td>
+                            <td><?php echo $d['pekerjaan']; ?></td> -->
                             <td><?php echo $d['jenisKelamin']; ?></td>
-                            <td><?php echo $d['tanggalsurvey']; ?></td>
-                            <td><?php echo $d['status']; ?></td>
+                            <!-- <td><?php echo $d['tanggalsurvey']; ?></td> -->
+                            <td><?php echo $d['tanggalpenerimaan']; ?></td>
+                            <!-- <td><?php echo $d['status']; ?></td> -->
                             <td>
-                            <a class="btn btn-sm btn-primary" href="form_editData.php?id_warga=<?php echo $d['id_warga']; ?>">Edit</a> 
+                            <a class="btn btn-sm btn-primary" href="edit.php?id_warga=<?php echo $d['id_warga']; ?>">Edit</a> 
                             </td>
                         </tr>
                     </table>
