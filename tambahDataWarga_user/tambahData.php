@@ -46,13 +46,13 @@
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="../tambahDataWarga/tambahData.php">Tambah Data</a>
+            <a class="collapse-item" href="tambahData.php">Tambah Data</a>
             <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
             <a class="collapse-item" href="../generateQrcode.php">Generate QR-Code</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="../crudKriteria/tambahKriteria.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Kriteria</span>
@@ -75,14 +75,14 @@
           <i class="fas fa-fw fa-palette"></i>
           <span>Manajemen User</span>
         </a>
-      </li>
-      <hr class="sidebar-divider">  
+      </li> -->
+      <hr class="sidebar-divider">   
       <li class="nav-item"> 
         <a class="nav-link" href="../logout.php">
           <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>  
           <span>Keluar</span>
         </a>
-      </li>   
+      </li>  
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -98,10 +98,10 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Alasan Hapus</h1>
+            <h1 class="h3 mb-0 text-gray-800">Tambah Data Warga</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../index.php">Tambah Data</a></li>
-              <li class="breadcrumb-item">Alasan Hapus</li>
+              <li class="breadcrumb-item"><a href="tambahData.php">Home</a></li>
+              <li class="breadcrumb-item">Tambah Data</li>
             </ol>
           </div>
 
@@ -111,55 +111,78 @@
             <div class="col-lg-12">
               <!-- Simple Tables -->
               <div class="card">
-                
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahData.php" class="btn btn-sm btn-primary">Tambah Data</a></h6>
+                  <form action="../tambahDataWarga/tambahData.php" method="get">
+                      <input type="text" name="cari">
+                      <input type="submit" value="Cari">
+                  </form>
+                  <?php 
+                        if(isset($_GET['cari'])){
+                            $cari = $_GET['cari'];
+                            echo "<b>Hasil pencarian : ".$cari."</b>";
+                        }
+                    ?>
+                </div>
                 <div class="table-responsive">
-                <table class="table align-items-center table-flush">
+                  <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
-                        <th>Pilih Salah Satu Untuk Menghapus Data</th>
-                        
+                        <th>No.</th>
+                        <th>NIK</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>Tempat, Tanggal Lahir</th>
+                        <th>Pekerjaan</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tanggal Survey</th>
+                        <th>Status</th>
+                        <th>Action</th>
                       </tr>
-                    </thead>
-                    <tr>
-                      <th>
-                      <form action="../prosesAlasan.php" method="post">
-                          <!-- <input type="text" name="nik" value="<?php echo $_GET['nik'];?>" > -->
+                      <?php 
+                          include "../crudManageUser/config.php";
+                          $query_mysqli = mysqli_query($koneksi,"SELECT * FROM warga")or die(mysqli_error());
                           
-                          <input type="radio" name="alasan" value="Tidak Layak"> Tidak Layak<br><br>
-                          <input type="radio" name="alasan" value="Meninggal"> Meninggal<br><br>
-                          <input type="radio" name="alasan" value="KPM Tidak Ditemukan"> KPM Tidak Ditemukan<br><br>
-                          <input type="radio" name="alasan" value="Pindah Domisili"> Pindah domisili<br>
-                          <div class="form-group">
-                      <div class="custom-file">
-                    </div>
-                          <input type="submit" class="btn btn-primary" value="Submit">
-                        </form>
-
-                      </th>
-                    </tr>
-                    
+                          if(isset($_GET['cari'])){
+                              $cari = $_GET['cari'];
+                              $query = mysqli_query($koneksi,"SELECT * FROM warga WHERE nama LIKE '%".$cari."%' OR nik LIKE '%".$cari."%'" ); 
+                            }
+                              else{
+                                  $query = mysqli_query($koneksi,"SELECT * FROM warga"); 
+                              }
+                          $nomor = 1;
+                          if($query){
+                          while($data = mysqli_fetch_array($query)){
+                          ?> 
+                            <tr>
+                              <td><?php echo $nomor++; ?></td>
+                              <td><?php echo $data['nik']; ?></td>
+                              <td><?php echo $data['nama']; ?></td>
+                              <td><?php echo $data['alamat']; ?></td>
+                              <td><?php echo $data['ttl']; ?></td>
+                              <td><?php echo $data['pekerjaan']; ?></td>
+                              <td><?php echo $data['jenisKelamin']; ?></td>
+                              <td><?php echo $data['tanggalsurvey']; ?></td>
+                              <td><?php echo $data['status']; ?></td>
+                              <td>
+                                <a class="btn btn-sm btn-primary" href="form_editData.php?id_warga=<?php echo $data['id_warga']; ?>">Edit</a> 
+                                <a class="btn btn-sm btn-primary" href="deleteData.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a> 
+                                <a class="btn btn-sm btn-primary" href="detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a>
+                                
+                              </td>
+                            </tr>
+                            <?php } }?>
+                      </thead>
+                    <tbody>                      
+                      
+                    </tbody>
                   </table>
-                
-
-                <?php
-                //Mengecek apakah ada nilai dengan nama jenis_kelamin yang dikirim dari form
-                if (isset($_POST['alasan'])) {
-
-                    $alasan=$_POST['alasan'];
-                    echo "<br>".$alasan;
-                }
-                ?>
-                
-
-                  
                 </div>
                 <div class="card-footer"></div>
               </div>
             </div>
           </div>
-          <!--Row-->
-
-         
+          <!--Row-->         
 
         </div>
         <!---Container Fluid-->
@@ -192,5 +215,3 @@
 </body>
 
 </html>
-
-

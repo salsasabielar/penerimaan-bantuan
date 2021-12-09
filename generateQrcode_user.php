@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link href="../img/logo/logo-SIB.png" rel="icon">
+  <link href="img/logo/logo-SIB.png" rel="icon">
   <title>Sistem Informasi Penerimaan Bantuan</title>
-  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="../css/ruang-admin.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/ruang-admin.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -20,7 +20,7 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon">
-          <img src="../img/logo/SSIB.png">
+          <img src="img/logo/SSIB.png">
         </div>        
       </a>
       <li class="nav-item active">
@@ -29,7 +29,7 @@
       <div class="sidebar-heading">       
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="../index.php">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>        
@@ -46,43 +46,43 @@
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="../tambahDataWarga/tambahData.php">Tambah Data</a>
-            <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
-            <a class="collapse-item" href="../generateQrcode.php">Generate QR-Code</a>
+            <a class="collapse-item" href="tambahDataWarga_user/tambahData.php">Tambah Data</a>
+            <a class="collapse-item" href="hapus_user.php">Data Terhapus</a>
+            <a class="collapse-item" href="generateQrcode_user.php">Generate QR-Code</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../crudKriteria/tambahKriteria.php">
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="crudKriteria/tambahKriteria.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Kriteria</span>
         </a>        
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../scan/validasiPenerima">
+        <a class="nav-link collapsed" href="scan/validasiPenerima">
           <i class="fas fa-fw fa-columns"></i>
           <span>Scanner</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../laporan.php">
+        <a class="nav-link collapsed" href="laporan.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan</span>
         </a>        
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../manageUser.php">
+        <a class="nav-link" href="manageUser.php">
           <i class="fas fa-fw fa-palette"></i>
           <span>Manajemen User</span>
         </a>
-      </li>
-      <hr class="sidebar-divider">  
+      </li> -->
+      <hr class="sidebar-divider">    
       <li class="nav-item"> 
-        <a class="nav-link" href="../logout.php">
+        <a class="nav-link" href="logout.php">
           <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400 "></i>  
           <span>Keluar</span>
         </a>
-      </li>   
+      </li>
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -98,10 +98,10 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Alasan Hapus</h1>
+            <h1 class="h3 mb-0 text-gray-800">Generate QR-CODE</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../index.php">Tambah Data</a></li>
-              <li class="breadcrumb-item">Alasan Hapus</li>
+              <li class="breadcrumb-item"><a href="./">Home</a></li>
+              <li class="breadcrumb-item">Generate QR-CODE</li>
             </ol>
           </div>
 
@@ -111,47 +111,53 @@
             <div class="col-lg-12">
               <!-- Simple Tables -->
               <div class="card">
-                
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                </div>
                 <div class="table-responsive">
-                <table class="table align-items-center table-flush">
+                  <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
-                        <th>Pilih Salah Satu Untuk Menghapus Data</th>
-                        
+                      <th>No.</th>
+                        <th>NIK</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                        <th>Tempat, Tanggal Lahir</th>
+                        <th>Pekerjaan</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tanggal Survey</th>
+                        <th>Status</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
-                    <tr>
-                      <th>
-                      <form action="../prosesAlasan.php" method="post">
-                          <!-- <input type="text" name="nik" value="<?php echo $_GET['nik'];?>" > -->
-                          
-                          <input type="radio" name="alasan" value="Tidak Layak"> Tidak Layak<br><br>
-                          <input type="radio" name="alasan" value="Meninggal"> Meninggal<br><br>
-                          <input type="radio" name="alasan" value="KPM Tidak Ditemukan"> KPM Tidak Ditemukan<br><br>
-                          <input type="radio" name="alasan" value="Pindah Domisili"> Pindah domisili<br>
-                          <div class="form-group">
-                      <div class="custom-file">
-                    </div>
-                          <input type="submit" class="btn btn-primary" value="Submit">
-                        </form>
-
-                      </th>
-                    </tr>
-                    
+                    <tbody>
+                      <tr>
+                      <?php 
+                          include "crudManageUser/config.php";
+                            $sql=mysqli_query($koneksi, "SELECT * FROM warga ORDER BY id_warga ASC");
+                            $no=1;
+                            while($d=mysqli_fetch_array($sql)){
+						echo "<tr>
+							<td width='40px' align='center'>$no</td>
+							<td>$d[nik]</td>
+							<td>$d[nama]</td>
+							<td>$d[alamat]</td>
+							<td>$d[ttl]</td>
+							<td>$d[pekerjaan]</td>
+							<td>$d[jenisKelamin]</td>
+							<td>$d[tanggalsurvey]</td>
+							<td>$d[status]</td>
+							<td width='180px' align='center'>
+								<a class='btn btn-danger btn-sm' href='generate/generateqrcode.php?nik=$d[nik]&nomor=$d[nik]'>Generate</a>
+								<a class='btn btn-success btn-sm' href='cetakqrcode.php?id_warga=$d[id_warga]' target='_blank'>Cetak</a>
+							</td>
+						</tr>";
+						$no++;
+					}
+                          ?> 
+                            <?php ?>
+                      
+                    </tbody>
                   </table>
-                
-
-                <?php
-                //Mengecek apakah ada nilai dengan nama jenis_kelamin yang dikirim dari form
-                if (isset($_POST['alasan'])) {
-
-                    $alasan=$_POST['alasan'];
-                    echo "<br>".$alasan;
-                }
-                ?>
-                
-
-                  
                 </div>
                 <div class="card-footer"></div>
               </div>
@@ -159,12 +165,12 @@
           </div>
           <!--Row-->
 
-         
-
+          
         </div>
         <!---Container Fluid-->
       </div>
 
+       
     </div>
   </div>
 
@@ -173,13 +179,13 @@
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="../js/ruang-admin.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/ruang-admin.min.js"></script>
   <!-- Page level plugins -->
-  <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->
   <script>
@@ -192,5 +198,3 @@
 </body>
 
 </html>
-
-

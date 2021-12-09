@@ -47,8 +47,8 @@
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="tambahData.php">Tambah Data</a>
-            <a class="collapse-item" href="hapus.php">Data Terhapus</a>
-            <a class="collapse-item" href="generateQrcode.php">Generate QR-Code</a>
+            <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
+            <a class="collapse-item" href="../generateQrcode.php">Generate QR-Code</a>
           </div>
         </div>
       </li>
@@ -135,8 +135,15 @@
                       <input type="text" class="form-control" name="pekerjaan">
                     </div>
                     <div class="form-group">
-                      <label for="jenisKelamin">Jenis Kelamin</label>
-                      <input type="text" class="form-control" name="jenisKelamin">
+                      <label>Jenis Kelamin</label>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="jenisKelamin" class="custom-control-input" value="Laki-Laki">
+                        <label class="custom-control-label" for="customRadio1">Laki-Laki </label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="jenisKelamin" class="custom-control-input" value="Perempuan">
+                        <label class="custom-control-label" for="customRadio2">Perempuan</label>
+                      </div>
                     </div>
                     <div class="form-group">
                       <label for="tanggalsurvey">Tanggal Survey</label>

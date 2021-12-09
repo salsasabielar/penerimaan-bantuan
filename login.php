@@ -6,7 +6,11 @@ include 'config.php';
 $username = $_POST['username'];
 $password = $_POST['password'];
  
-$result = mysqli_query($connect, "SELECT * FROM user where username='$username' and password='$password'");
+$result = mysqli_query($koneksi, "SELECT * FROM user where username='$username' and password='$password'");
+foreach ($result as $data){
+    $role = $data['role'];
+}
+
 
 $cek = mysqli_num_rows($result);
  
@@ -16,8 +20,13 @@ if($cek > 0) {
 	$_SESSION['username'] = $username;
 	$_SESSION['nama'] = $data['nama'];
 	$_SESSION['status'] = "login";
+	if($role == "admin"){
+		header("location:index.php");
+	}else{
+		header("location:index_user.php");
+	}
 	$_SESSION['id_login'] = $data['id'];
-	header("location:index.php");
+	
 } else {
 	echo "<script>alert('Username/password salah!');history.go(-1);</script>";
 }

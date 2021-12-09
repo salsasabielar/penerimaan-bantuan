@@ -157,7 +157,10 @@ include "../crudManageUser/config.php";
                                             
                                         //     }
                                         // Echo $nik;
-                                        $sql=mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$_POST[nik]'");
+                                        // $sql=mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$_POST[nik]'");
+                                        $sql=mysqli_query($koneksi, "SELECT * FROM penerima INNER JOIN warga ON penerima.id_warga=warga.id_warga
+                                        WHERE warga.nik='$_POST[nik]'");
+
                                         $d=mysqli_fetch_array($sql);
 
                                         if(mysqli_num_rows($sql) < 1){

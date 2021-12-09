@@ -49,6 +49,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="tambahDataWarga/tambahData.php">Tambah Data</a>
             <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
+            <a class="collapse-item" href="../generateQrcode.php">Generate QR-Code</a>
           </div>
         </div>
       </li>
@@ -132,8 +133,7 @@
                           while ($data=mysqli_fetch_array($hasil)){
                             
                             echo "<tr ><td>$nomor</td><td>$data[nama]</td>
-                                <td><input type=checkbox name=ya[] value=$data[id_kriteria] id=id1$no1></td>
-                                <td><input type=checkbox name=tidak[] value=$data[id_kriteria] id=id2$no2></td>";  
+                                <td><input type=checkbox name=ya[] value=$data[id_kriteria] id=id1$no1></td>";  
                             $nomor++;
                             $no1++;
                             $no2++;

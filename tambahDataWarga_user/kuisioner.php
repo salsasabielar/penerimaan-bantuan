@@ -12,6 +12,7 @@
   <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="../css/ruang-admin.min.css" rel="stylesheet">
+  <link href="../css/button.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -46,24 +47,19 @@
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="../tambahDataWarga/tambahData.php">Tambah Data</a>
-            <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
-            <a class="collapse-item" href="../generateQrcode.php">Generate QR-Code</a>
+          <a class="collapse-item" href="tambahData.php">Tambah Data</a>
+            <a class="collapse-item" href="../hapus_user.php">Data Terhapus</a>
+            <a class="collapse-item" href="../generateQrcode_user.php">Generate QR-Code</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="../crudKriteria/tambahKriteria.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Kriteria</span>
         </a>        
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="../scan/validasiPenerima">
-          <i class="fas fa-fw fa-columns"></i>
-          <span>Scanner</span>
-        </a>
-      </li>
+      
       <li class="nav-item">
         <a class="nav-link collapsed" href="../laporan.php">
           <i class="fas fa-fw fa-table"></i>
@@ -75,7 +71,7 @@
           <i class="fas fa-fw fa-palette"></i>
           <span>Manajemen User</span>
         </a>
-      </li>
+      </li> -->
       <hr class="sidebar-divider">  
       <li class="nav-item"> 
         <a class="nav-link" href="../logout.php">
@@ -98,11 +94,11 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Alasan Hapus</h1>
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../index.php">Tambah Data</a></li>
-              <li class="breadcrumb-item">Alasan Hapus</li>
-            </ol>
+            <h1 class="h3 mb-0 text-gray-800"></h1>
+            <!-- <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+              <li class="breadcrumb-item">Manajemen User</li>
+            </ol> -->
           </div>
 
           <!-- Row -->
@@ -111,51 +107,52 @@
             <div class="col-lg-12">
               <!-- Simple Tables -->
               <div class="card">
-                
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  
+                </div>
                 <div class="table-responsive">
-                <table class="table align-items-center table-flush">
+                  <form  action="filter.php" method="POST">
+                  <table class="table align-items-center table-flush">
                     <thead class="thead-light">
+                    
                       <tr>
-                        <th>Pilih Salah Satu Untuk Menghapus Data</th>
+                        <th>No.</th>
+                        <th>Uraian Kriteria</th>
+                        <th>Ya</th>
+                        <th>Tidak</th>
+
+                        <?php 
+                          include "../crudManageUser/config.php";
                         
+                        	$tampil ="SELECT * FROM kriteria ORDER BY id_kriteria asc";
+                          $hasil=mysqli_query($koneksi,$tampil);  
+                          $no1=0;
+                          $no2=0; 
+
+                          $nomor = 1;
+                          while ($data=mysqli_fetch_array($hasil)){
+                            
+                            echo "<tr ><td>$nomor</td><td>$data[nama]</td>
+                                <td><input type=checkbox name=ya[] value=$data[id_kriteria] id=id1$no1></td>";  
+                            $nomor++;
+                            $no1++;
+                            $no2++;
+                           
+							            	?>
+                          <?php } ?>
                       </tr>
                     </thead>
-                    <tr>
-                      <th>
-                      <form action="../prosesAlasan.php" method="post">
-                          <!-- <input type="text" name="nik" value="<?php echo $_GET['nik'];?>" > -->
-                          
-                          <input type="radio" name="alasan" value="Tidak Layak"> Tidak Layak<br><br>
-                          <input type="radio" name="alasan" value="Meninggal"> Meninggal<br><br>
-                          <input type="radio" name="alasan" value="KPM Tidak Ditemukan"> KPM Tidak Ditemukan<br><br>
-                          <input type="radio" name="alasan" value="Pindah Domisili"> Pindah domisili<br>
-                          <div class="form-group">
-                      <div class="custom-file">
-                    </div>
-                          <input type="submit" class="btn btn-primary" value="Submit">
-                        </form>
-
-                      </th>
-                    </tr>
-                    
+                    <tbody>
+                    </tbody>
                   </table>
-                
-
-                <?php
-                //Mengecek apakah ada nilai dengan nama jenis_kelamin yang dikirim dari form
-                if (isset($_POST['alasan'])) {
-
-                    $alasan=$_POST['alasan'];
-                    echo "<br>".$alasan;
-                }
-                ?>
-                
-
-                  
+                  <button type="submit" class="btn btn-primary" >Simpan</button>
+                          
+                </form>
                 </div>
                 <div class="card-footer"></div>
               </div>
             </div>
+            
           </div>
           <!--Row-->
 
@@ -165,6 +162,7 @@
         <!---Container Fluid-->
       </div>
 
+       
     </div>
   </div>
 
@@ -192,5 +190,3 @@
 </body>
 
 </html>
-
-

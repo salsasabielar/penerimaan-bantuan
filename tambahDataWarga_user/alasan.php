@@ -46,13 +46,13 @@
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="../tambahDataWarga/tambahData.php">Tambah Data</a>
-            <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
-            <a class="collapse-item" href="../generateQrcode.php">Generate QR-Code</a>
+            <a class="collapse-item" href="../tambahDataWarga_user/tambahData.php">Tambah Data</a>
+            <a class="collapse-item" href="../hapus_user.php">Data Terhapus</a>
+            <a class="collapse-item" href="../generateQrcode_user.php">Generate QR-Code</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="../crudKriteria/tambahKriteria.php">
           <i class="fab fa-fw fa-wpforms"></i>
           <span>Kriteria</span>
@@ -75,7 +75,7 @@
           <i class="fas fa-fw fa-palette"></i>
           <span>Manajemen User</span>
         </a>
-      </li>
+      </li> -->
       <hr class="sidebar-divider">  
       <li class="nav-item"> 
         <a class="nav-link" href="../logout.php">

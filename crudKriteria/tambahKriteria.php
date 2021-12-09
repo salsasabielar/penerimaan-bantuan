@@ -48,7 +48,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="../tambahDataWarga/tambahData.php">Tambah Data</a>
             <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
-            <a class="collapse-item" href="generateQrcode.php">Generate QR-Code</a>
+            <a class="collapse-item" href="../generateQrcode.php">Generate QR-Code</a>
           </div>
         </div>
       </li>
