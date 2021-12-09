@@ -129,7 +129,7 @@
                 $nomor = 1;
                 while($data = mysqli_fetch_array($query_mysqli)){
                 ?>
-                <form action="prosesedit.php" method="post">
+                <form action="prosesedit_scan.php" method="post">
                     <div class="form-group">
                       <label for="role">Tanggal Penerimaan</label>
                       <input type="date" class="form-control" name="tanggalpenerimaan" value="<?php echo $data['tanggalpenerimaan'] ?>">

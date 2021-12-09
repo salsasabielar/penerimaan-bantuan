@@ -112,8 +112,8 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <!-- <h6 class="m-0 font-weight-bold text-primary"><a href="form_tambahData.php" class="btn btn-sm btn-primary">Tambah Data</a></h6> -->
-                  <form action="../tambahDataWarga/tambahData.php" method="get">
+                <td><a class="btn btn-danger" href="cetak_penerimaan.php">Cetak</a></td>
+                  <form action="penerimaan.php" method="get">
                       <input type="text" name="cari">
                       <input type="submit" value="Cari">
                   </form>
@@ -132,12 +132,9 @@
                         <th>NIK</th>
                         <th>Nama</th>
                         <th>Alamat</th>
-                        <!-- <th>Tempat, Tanggal Lahir</th>
-                        <th>Pekerjaan</th> -->
+                        <th>Pekerjaan</th>
                         <th>Jenis Kelamin</th>
                         <th>Tanggal Penerimaan</th>
-                        <!-- <th>Tanggal Survey</th>
-                        <th>Status</th> -->
                         <th>Action</th>
                       </tr>
                       <?php 
@@ -146,7 +143,8 @@
                           
                           if(isset($_GET['cari'])){
                               $cari = $_GET['cari'];
-                              $query = mysqli_query($koneksi,"SELECT * FROM warga WHERE nama LIKE '%".$cari."%' OR nik LIKE '%".$cari."%'" ); 
+                              $query = mysqli_query($koneksi,"SELECT * FROM penerimaan INNER JOIN warga on penerimaan.id_warga=warga.id_warga WHERE warga.nama LIKE '%".$cari."%' OR warga.id_warga LIKE '%".$cari."%'" );
+                              // $query = mysqli_query($koneksi,"SELECT * FROM warga WHERE nama LIKE '%".$cari."%' OR nik LIKE '%".$cari."%'" ); 
                             }
                               else{
                                   $query = mysqli_query($koneksi,"SELECT * FROM penerimaan INNER JOIN warga on penerimaan.id_warga=warga.id_warga"); 
@@ -160,14 +158,11 @@
                               <td><?php echo $data['nik']; ?></td>
                               <td><?php echo $data['nama']; ?></td>
                               <td><?php echo $data['alamat']; ?></td>
-                              <!-- <td><?php echo $data['ttl']; ?></td>
-                              <td><?php echo $data['pekerjaan']; ?></td> -->
+                              <td><?php echo $data['pekerjaan']; ?></td>
                               <td><?php echo $data['jenisKelamin']; ?></td>
                               <td><?php echo $data['tanggalpenerimaan']; ?></td>
-                              <!-- <td><?php echo $data['tanggalsurvey']; ?></td>
-                              <td><?php echo $data['status']; ?></td> -->
                               <td>
-                                <a class="btn btn-sm btn-primary" href="form_editData.php?id_warga=<?php echo $data['id_warga']; ?>">Edit</a> 
+                                <a class="btn btn-sm btn-primary" href="edit.php?id_penerimaan=<?php echo $data['id_penerimaan']; ?>">Edit</a> 
                                 <!-- <a class="btn btn-sm btn-primary" href="deleteData.php?id_warga=<?php echo $data['id_warga']; ?>" onclick="return confirm()">Hapus</a> 
                                 <a class="btn btn-sm btn-primary" href="detail.php?id_warga=<?php echo $data['id_warga']; ?>">Detail</a> -->
                                 

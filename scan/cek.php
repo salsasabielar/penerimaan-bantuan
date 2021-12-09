@@ -157,7 +157,9 @@ include "../crudManageUser/config.php";
                                             
                                         //     }
                                         // Echo $nik;
-                                        $sql=mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$_POST[nik]'");
+                                        // $sql=mysqli_query($koneksi, "SELECT * FROM warga WHERE nik='$_POST[nik]'");
+                                        $sql=mysqli_query($koneksi, "SELECT warga.*, penerimaan.tanggalpenerimaan, penerimaan.id_penerimaan FROM penerimaan LEFT JOIN warga ON penerimaan.id_warga=warga.id_warga
+                                        WHERE warga.nik='$_POST[nik]'");
                                         $d=mysqli_fetch_array($sql);
 
                                         if(mysqli_num_rows($sql) < 1){
@@ -176,24 +178,20 @@ include "../crudManageUser/config.php";
                                                 <th>NIK</th>
                                                 <th>Nama</th>
                                                 <th>Alamat</th>
-                                                <th>Tempat, Tanggal Lahir</th>
                                                 <th>Pekerjaan</th>
                                                 <th>Jenis Kelamin</th>
-                                                <th>Tanggal Survey</th>
-                                                <th>Status</th>
+                                                <th>Tanggal Penerimaan</th>
                                                 <th>Action</th>
                                             </tr>
                                             <tr>
                                                 <td><?php echo $d['nik']; ?></td>
                                                 <td><?php echo $d['nama']; ?></td>
                                                 <td><?php echo $d['alamat']; ?></td>
-                                                <td><?php echo $d['ttl']; ?></td>
                                                 <td><?php echo $d['pekerjaan']; ?></td>
                                                 <td><?php echo $d['jenisKelamin']; ?></td>
-                                                <td><?php echo $d['tanggalsurvey']; ?></td>
-                                                <td><?php echo $d['status']; ?></td>
+                                                <td><?php echo $d['tanggalpenerimaan']; ?></td>
                                                 <td>
-                                                <a class="btn btn-sm btn-primary" href="form_editData.php?id_warga=<?php echo $d['id_warga']; ?>">Edit</a> 
+                                                <a class="btn btn-sm btn-primary" href="edit_scan.php?id_penerimaan=<?php echo $d['id_penerimaan'];?>">Edit</a> 
                                                 </td>
                                             </tr>
                                         </table>
