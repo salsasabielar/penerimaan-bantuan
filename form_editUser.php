@@ -64,11 +64,24 @@
           <span>Scanner</span>
         </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="laporan.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan</span>
         </a>        
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Laporan</span>
+        </a>
+        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="laporan.php">Data Penerima</a>
+            <a class="collapse-item" href="scan/penerimaan.php">Data Penerimaan</a>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="manageUser.php">
