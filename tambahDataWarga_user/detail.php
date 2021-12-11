@@ -19,7 +19,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index_user.php">
         <div class="sidebar-brand-icon">
           <img src="../img/logo/SSIB.png">
         </div>        
@@ -30,7 +30,7 @@
       <div class="sidebar-heading">       
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="../index.php">
+        <a class="nav-link" href="../index_user.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>        
@@ -101,7 +101,7 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Detail</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="../index.php">Tambah Data</a></li>
+              <li class="breadcrumb-item"><a href="../index_user.php">Tambah Data</a></li>
               <li class="breadcrumb-item">Detail</li>
             </ol>
           </div>
@@ -255,7 +255,7 @@
                       
                       <tr height="40">
                           <td>  
-                          <a class="btn btn-sm btn-primary" href="../tambahDataWarga/tambahData.php">Kembali</a>
+                          <a class="btn btn-sm btn-primary" href="../tambahDataWarga_user/tambahData.php">Kembali</a>
                         </td><td></td>
                           <td></td><td></td><td></td><td></td>
                       </tr>

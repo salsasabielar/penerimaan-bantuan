@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index_user.php">
         <div class="sidebar-brand-icon">
           <img src="../img/logo/SSIB.png">
         </div>        
@@ -29,7 +29,7 @@
       <div class="sidebar-heading">       
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="../index.php">
+        <a class="nav-link" href="../index_user.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>        
@@ -46,7 +46,7 @@
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="tambahData.php">Tambah Data</a>
+            <a class="collapse-item" href="/tambahDataWarga_user/tambahData.php">Tambah Data</a>
             <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
             <a class="collapse-item" href="../generateQrcode.php">Generate QR-Code</a>
           </div>

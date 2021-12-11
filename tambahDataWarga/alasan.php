@@ -64,12 +64,6 @@
           <span>Scanner</span>
         </a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="../laporan.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Laporan</span>
-        </a>        
-      </li> -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">
@@ -135,8 +129,8 @@
                     </thead>
                     <tr>
                       <th>
-                      <form action="../prosesAlasan.php" method="post">
-                          <!-- <input type="text" name="nik" value="<?php echo $_GET['nik'];?>" > -->
+                      <form action="prosesAlasan.php" method="post">
+                          <input type="hidden" name="nik" value="<?php echo $_GET['nik'];?>" >
                           
                           <input type="radio" name="alasan" value="Tidak Layak"> Tidak Layak<br><br>
                           <input type="radio" name="alasan" value="Meninggal"> Meninggal<br><br>

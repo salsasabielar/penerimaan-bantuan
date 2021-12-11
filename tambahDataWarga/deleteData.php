@@ -1,5 +1,5 @@
 <?php 
-include '../crudManageUser/config.php';
+include '../config.php';
 $id_warga = $_GET['id_warga'];;
 // $alasan = $_GET['alasan'];;
 $tampil ="SELECT * FROM warga where id_warga = '$id_warga' ";

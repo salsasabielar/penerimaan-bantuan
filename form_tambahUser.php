@@ -53,23 +53,17 @@
         </div>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="crudKriteria/tambahKriteria.php">
+          <i class="fab fa-fw fa-wpforms"></i>
+          <span>Kriteria</span>
+        </a>        
+      </li>
+      <li class="nav-item">
         <a class="nav-link collapsed" href="scan/validasiPenerima">
           <i class="fas fa-fw fa-columns"></i>
           <span>Scanner</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed">
-          <i class="fas fa-fw fa-columns"></i>
-          <span>Scanner</span>
-        </a>
-      </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="laporan.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Laporan</span>
-        </a>        
-      </li> -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
           aria-controls="collapseTable">

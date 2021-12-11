@@ -132,7 +132,7 @@
                         <th>No.</th>
                         <th>Uraian Kriteria</th>
                         <th>Ya</th>
-                        <th>Tidak</th>
+                        <th></th>
 
                         <?php 
                           include "../crudManageUser/config.php";

@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index_user.php">
         <div class="sidebar-brand-icon">
           <img src="img/logo/SSIB.png">
         </div>        
@@ -29,7 +29,7 @@
       <div class="sidebar-heading">       
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="index.php">
+        <a class="nav-link" href="index_user.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>        

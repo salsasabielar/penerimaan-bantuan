@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php">
         <div class="sidebar-brand-icon">
           <img src="../img/logo/SSIB.png">
         </div>        
@@ -46,9 +46,9 @@
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="tambahData.php">Tambah Data</a>
+            <a class="collapse-item" href="../tambahDataWarga/tambahData.php">Tambah Data</a>
             <a class="collapse-item" href="../hapus.php">Data Terhapus</a>
-            <a class="collapse-item" href="generateQrcode.php">Generate QR-Code</a>
+            <a class="collapse-item" href="../generateQrcode.php">Generate QR-Code</a>
           </div>
         </div>
       </li>
@@ -65,10 +65,17 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../laporan.php">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan</span>
-        </a>        
+        </a>
+        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="../laporan.php">Data Penerima</a>
+            <a class="collapse-item" href="../scan/penerimaan.php">Data Penerimaan</a>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../manageUser.php">
@@ -99,10 +106,10 @@
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Laporan Penerimaan Bantuan</h1>
-            <!-- <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="tambahData.php">Home</a></li>
-              <li class="breadcrumb-item">Tambah Data</li>
-            </ol> -->
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="penerimaan.php">Laporan</a></li>
+              <li class="breadcrumb-item">Data Penerimaan</li>
+            </ol>
           </div>
 
           <!-- Row -->

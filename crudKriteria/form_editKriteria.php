@@ -18,7 +18,7 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.php">
         <div class="sidebar-brand-icon">
           <img src="../img/logo/SSIB.png">
         </div>        
@@ -65,10 +65,17 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="../laporan.php">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
+          aria-controls="collapseTable">
           <i class="fas fa-fw fa-table"></i>
           <span>Laporan</span>
-        </a>        
+        </a>
+        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="../laporan.php">Data Penerima</a>
+            <a class="collapse-item" href="../scan/penerimaan.php">Data Penerimaan</a>
+          </div>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../manageUser.php">
